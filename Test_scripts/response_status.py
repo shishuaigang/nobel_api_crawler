@@ -10,6 +10,10 @@ class response_status:
                 respon_status.append(1)
             elif '"status":0' in response[i].text:
                 respon_status.append(0)
+            elif '"status": 1' in response[i].text:
+                respon_status.append(1)
+            elif '"status": 0' in response[i].text:
+                respon_status.append(0)
             else:
                 respon_status.append(-1)  # 如果返回code是500，就没有status这个值返回，程序会出错，所以使用-1
         return respon_status

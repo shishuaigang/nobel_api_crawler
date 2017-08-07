@@ -4,7 +4,7 @@
     "receiver_list": [
         "sgshi@in-road.com"
     ],
-    "mail_subject": "Inroad api 扫描",
+    "mail_subject": "Nobel api 扫描",
     "api_version": "999999999",
     "db_username": "sgshi",
     "db_userpasswd": "ssg12345!",

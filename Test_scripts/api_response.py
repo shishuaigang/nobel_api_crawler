@@ -22,7 +22,6 @@ class api_cor_res(correct):
         api_url = self.api_url()
         for i in range(len(self.api_url())):
             results = requests.post("http://192.168.31.99:7385/" + api_url[i],
-                                    params={"APIVersion": api_version},
                                     data=api_param[i],
                                     cookies=cookie,
                                     headers=headers
@@ -51,7 +50,6 @@ class api_err_res(error):
                 _result_min = []
                 for k in range(len(error_list)):
                     results = requests.post("http://192.168.31.99:7385/" + api_url[i],
-                                            params={"APIVersion": api_version},
                                             data=dict(zip(_KEY[k], _VALUE[k])), cookies=cookie, headers=headers)
                     _result_min.append(results)
                 result.append(_result_min)

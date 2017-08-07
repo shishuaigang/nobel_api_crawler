@@ -46,7 +46,7 @@ class gen_result:
             </style>
             </head>
             <body bgcolor="#F7F7F7">
-            <h1 style="margin-left:12.5%;">Inroad_API_Scan</h1>
+            <h1 style="margin-left:12.5%;">Nobel_API_Scan</h1>
             <h2 align="center" style="color:darkblue">Summary</h2>
              """
         f.write(message)
@@ -108,7 +108,7 @@ class gen_result:
                     self.url[i] + '">' + self.url[i] + '</a></td>')
                 f1.write('<td align="center">' + self.cn_name[i] + '</td>')
                 f1.write('<td align="center">' + str(self.res_time[i]) + 'ms</td>')
-                # response code为200且status为1，code和status颜色为绿色，error message N/A
+                # response code为200且status为1，code和status颜色为绿色
                 if self.res_code[i] == 200 and self.res_status[i] == 1:
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
@@ -122,9 +122,9 @@ class gen_result:
                     f1.write(
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
                         (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
-                    # response code为500，颜色为红色，填入Response code : 500, Sever Error
                     f1.write('<td align="left"><div style="width:' + str(
                         float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                    # response code为500，颜色为紫色，填入Response code : 500, Sever Error
                 elif self.res_code[i] == 500:
                     f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
                     f1.write('<td align="center" bgcolor="purple">''</td>')

@@ -104,6 +104,8 @@ class api_cor_params(api_url):
             for j in range(len(api_param_details[i].keys())):
                 params_keys.append(api_param_details[i].keys()[j])
                 params_values.append(str(api_param_details[i].values()[j]["default"]))
+            params_keys.append("APIVersion")
+            params_values.append("999999999")
             params.append(dict(zip(params_keys, params_values)))
         return params
 
