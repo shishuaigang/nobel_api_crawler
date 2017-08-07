@@ -13,10 +13,22 @@ if __name__ == "__main__":
         bt = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 测试开始时间
         testNo = time.strftime('%Y%m%d%H%M', time.localtime())
         cur_dir = os.getcwd()
-        api_json_path = cur_dir + '\\APIcrawler_json_data'
+
+        api_json_path = None
+        if platform.system() == 'Windows':
+            api_json_path = cur_dir + '\\APIcrawler_json_data'
+        elif platform.system() == 'Darwin':
+            api_json_path = cur_dir + '/APIcrawler_json_data'
+
         print 'Now you are in ' + cur_dir
         print 'Your api json data location is ' + api_json_path
-        conf = json.loads(codecs.open(cur_dir + '\\Config\\config.json', encoding='utf-8').read())
+
+        conf = None
+        if platform.system() == 'Windows':
+            conf = json.loads(codecs.open(cur_dir + '\\Config\\config.json', encoding='utf-8').read())
+        elif platform.system() == 'Darwin':
+            conf = json.loads(codecs.open(cur_dir + '/Config/config.json', encoding='utf-8').read())
+
         api_ver = conf['api_version']
         cookie = getcookie.gecookie(api_ver)
         print 'Current api version is ' + api_ver
