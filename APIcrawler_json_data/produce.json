@@ -1,0 +1,5445 @@
+{
+  "resource": "Produce",
+  "section": [
+    {
+      "name": "诺贝尔生产管理",
+      "value": "apis"
+    }
+  ],
+  "apis": [
+    {
+      "url": "UAPI/Unit/AddRemarks",
+      "updatetime": "20170719",
+      "summary": "工单增加备注",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "remarks": {
+          "default": "",
+          "required": true,
+          "description": "备注内容"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Unit/Download",
+      "updatetime": "20170719",
+      "summary": "下载金属粉底",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "工单状态"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "propertyids": {
+          "default": "",
+          "required": false,
+          "description": "属性id，分号分隔"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Unit/QueryUnits",
+      "updatetime": "20170719",
+      "summary": "查询金属粉底",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "工单状态"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "propertyids": {
+          "default": "",
+          "required": false,
+          "description": "属性id，分号分隔"
+        },
+        "page": {
+          "default": "",
+          "required": true,
+          "description": "页码"
+        },
+        "pagesize": {
+          "default": "",
+          "required": false,
+          "description": "每页行数"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SplitPlan",
+      "updatetime": "20170719",
+      "summary": "拆分排班",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "要拆分的排班id"
+        },
+        "deviceId": {
+          "default": "",
+          "required": false,
+          "description": "机器id"
+        },
+        "targetplanid": {
+          "default": "",
+          "required": false,
+          "description": "插入位置排班id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "拆分数量"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/GetNextFlow",
+      "updatetime": "20170719",
+      "summary": "查询工序可去工序",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序Id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AddNextFlow",
+      "updatetime": "20170719",
+      "summary": "添加工序可去工序",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序Id"
+        },
+        "index": {
+          "default": "",
+          "required": true,
+          "description": "在下拉中的排序"
+        },
+        "nextflowid": {
+          "default": "",
+          "required": true,
+          "description": "可去工序Id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeleteNextFlow",
+      "updatetime": "20170719",
+      "summary": "删除工序可去工序",
+      "type": "POST",
+      "params": {
+        "id": {
+          "default": "",
+          "required": true,
+          "description": "id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Unit/UnitCheckSetList",
+      "updatetime": "20170613",
+      "summary": "工单质检设置列表",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "1",
+          "required": true,
+          "description": "状态"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AddQCRecord",
+      "updatetime": "20170524",
+      "summary": "新增质检结果登记",
+      "type": "POST",
+      "params": {
+        "CheckId": {
+          "default": "FBF588C7-F206-463D-A7C3-010901559526",
+          "required": true,
+          "description": "对应质检记录的checkid"
+        },
+        "ColorMushi": {
+          "default": "1",
+          "required": true,
+          "description": "颜色目视 1(OK),0(不OK)"
+        },
+        "L": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 L值"
+        },
+        "A": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 A值"
+        },
+        "B": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 B值"
+        },
+        "SeFen": {
+          "default": 0,
+          "required": false,
+          "description": "色粉 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "AoXian": {
+          "default": 0,
+          "required": false,
+          "description": "凹陷 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "ShaLi": {
+          "default": 0,
+          "required": false,
+          "description": "砂砾 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "BiaoMianBuLiang": {
+          "default": 0,
+          "required": false,
+          "description": "表面不良 1选择，0未选择"
+        },
+        "ZhenKong": {
+          "default": 0,
+          "required": false,
+          "description": "针孔 1选择，0未选择"
+        },
+        "GuangZeMuShi": {
+          "default": 0,
+          "required": false,
+          "description": "光泽目视 0,1,2"
+        },
+        "ChongJi": {
+          "default": 0,
+          "required": false,
+          "description": "冲击 0,1,2"
+        },
+        "ChongJiOther": {
+          "default": 0,
+          "required": false,
+          "description": "冲击其他 0,1,2"
+        },
+        "LiJin1": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(50)"
+        },
+        "LiJin2": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(<=10)"
+        },
+        "LiJin3": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(>=90)"
+        },
+        "LiuHua": {
+          "default": 0,
+          "required": false,
+          "description": "流化值"
+        },
+        "JiaoHua": {
+          "default": 0,
+          "required": false,
+          "description": "胶化值"
+        },
+        "WanQu": {
+          "default": 0,
+          "required": false,
+          "description": "弯曲 0,1,2"
+        },
+        "FuZhuoLi": {
+          "default": 0,
+          "required": false,
+          "description": "附着力 0,1,2"
+        },
+        "FuZhuoLiOther": {
+          "default": "",
+          "required": false,
+          "description": "附着力其他"
+        },
+        "YingDu": {
+          "default": 0,
+          "required": false,
+          "description": "硬度与耐刮性 0,1,2"
+        },
+        "YingDuOther": {
+          "default": "",
+          "required": false,
+          "description": "硬度与耐刮性"
+        },
+        "XieLiu": {
+          "default": 0,
+          "required": false,
+          "description": "斜流 0,1,2"
+        },
+        "YaHeng": {
+          "default": 0,
+          "required": false,
+          "description": "压痕硬度 0,1,2"
+        },
+        "BeiTu": {
+          "default": 0,
+          "required": false,
+          "description": "杯突 0,1,2"
+        },
+        "ShuiZhu": {
+          "default": 0,
+          "required": false,
+          "description": "水煮 0,1,2"
+        },
+        "BeiZhu": {
+          "default": 0,
+          "required": false,
+          "description": "备注  0,1,2，3,4,5,6"
+        },
+        "BeiZhuOther": {
+          "default": "",
+          "required": false,
+          "description": "备注其他"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UpdateQCRecord",
+      "updatetime": "20170524",
+      "summary": "编辑质检结果登记",
+      "type": "POST",
+      "params": {
+        "Id": {
+          "default": "794cfe97-3482-4c53-802c-acfc85c1e1b0",
+          "required": true,
+          "description": "质检结果Id"
+        },
+        "CheckId": {
+          "default": "FBF588C7-F206-463D-A7C3-010901559526",
+          "required": true,
+          "description": "对应质检记录的checkid"
+        },
+        "ColorMushi": {
+          "default": "0",
+          "required": true,
+          "description": "颜色目视 1(OK),0(不OK)"
+        },
+        "L": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 L值"
+        },
+        "A": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 A值"
+        },
+        "B": {
+          "default": 1.0,
+          "required": false,
+          "description": "颜色 B值"
+        },
+        "SeFen": {
+          "default": 0,
+          "required": false,
+          "description": "色粉 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "AoXian": {
+          "default": 0,
+          "required": false,
+          "description": "凹陷 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "ShaLi": {
+          "default": 0,
+          "required": false,
+          "description": "砂砾 A B C 三个等级 1,2,3 0表示未选择"
+        },
+        "BiaoMianBuLiang": {
+          "default": 0,
+          "required": false,
+          "description": "表面不良 1选择，0未选择"
+        },
+        "ZhenKong": {
+          "default": 0,
+          "required": false,
+          "description": "针孔 1选择，0未选择"
+        },
+        "GuangZeMuShi": {
+          "default": 0,
+          "required": false,
+          "description": "光泽目视 0,1,2"
+        },
+        "ChongJi": {
+          "default": 0,
+          "required": false,
+          "description": "冲击 0,1,2"
+        },
+        "ChongJiOther": {
+          "default": 0,
+          "required": false,
+          "description": "冲击其他 0,1,2"
+        },
+        "LiJin1": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(50)"
+        },
+        "LiJin2": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(<=10)"
+        },
+        "LiJin3": {
+          "default": "",
+          "required": false,
+          "description": "粒径D(>=90)"
+        },
+        "LiuHua": {
+          "default": 0,
+          "required": false,
+          "description": "流化值"
+        },
+        "JiaoHua": {
+          "default": 0,
+          "required": false,
+          "description": "胶化值"
+        },
+        "WanQu": {
+          "default": 0,
+          "required": false,
+          "description": "弯曲 0,1,2"
+        },
+        "FuZhuoLi": {
+          "default": 0,
+          "required": false,
+          "description": "附着力 0,1,2"
+        },
+        "FuZhuoLiOther": {
+          "default": "",
+          "required": false,
+          "description": "附着力其他"
+        },
+        "YingDu": {
+          "default": 0,
+          "required": false,
+          "description": "硬度与耐刮性 0,1,2"
+        },
+        "YingDuOther": {
+          "default": "",
+          "required": false,
+          "description": "硬度与耐刮性"
+        },
+        "XieLiu": {
+          "default": 0,
+          "required": false,
+          "description": "斜流 0,1,2"
+        },
+        "YaHeng": {
+          "default": 0,
+          "required": false,
+          "description": "压痕硬度 0,1,2"
+        },
+        "BeiTu": {
+          "default": 0,
+          "required": false,
+          "description": "杯突 0,1,2"
+        },
+        "ShuiZhu": {
+          "default": 0,
+          "required": false,
+          "description": "水煮 0,1,2"
+        },
+        "BeiZhu": {
+          "default": 0,
+          "required": false,
+          "description": "备注  0,1,2，3,4,5,6"
+        },
+        "BeiZhuOther": {
+          "default": "",
+          "required": false,
+          "description": "备注其他"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/GetQCRecord",
+      "updatetime": "20170509",
+      "summary": "查询质检结果登记",
+      "type": "POST",
+      "params": {
+        "CheckId": {
+          "default": "FBF588C7-F206-463D-A7C3-010901559526",
+          "required": true,
+          "description": "对应质检记录的checkid"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SignIn",
+      "updatetime": "20170509",
+      "summary": "签到",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "aaaaaaaaaaa",
+          "required": true,
+          "description": "机器号"
+        },
+        "signInUserId": {
+          "default": "6d3b5089-c2d3-4685-91fd-4bee68a8a881",
+          "required": true,
+          "description": "用户编号"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductAdd",
+      "updatetime": "20170413",
+      "summary": "新增商品",
+      "type": "POST",
+      "params": {
+        "sku": {
+          "default": "",
+          "required": true,
+          "description": "商品编号"
+        },
+        "l": {
+          "default": "",
+          "required": true,
+          "description": "颜色l"
+        },
+        "a": {
+          "default": "",
+          "required": true,
+          "description": "颜色a"
+        },
+        "b": {
+          "default": "",
+          "required": true,
+          "description": "颜色b"
+        },
+        "model": {
+          "default": "",
+          "required": true,
+          "description": "型号"
+        },
+        "maxquantity": {
+          "default": "",
+          "required": true,
+          "description": "单工单最大数量"
+        },
+        "propertyids": {
+          "default": "",
+          "required": true,
+          "description": "商品属性ids"
+        },
+        "discomplete": {
+          "default": "0",
+          "required": true,
+          "description": "是否待完善"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductGetList",
+      "updatetime": "20170413",
+      "summary": "获取商品",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        },
+        "sku": {
+          "default": "",
+          "required": true,
+          "description": "sku"
+        },
+        "propertyids": {
+          "default": "",
+          "required": true,
+          "description": "关注属性ids"
+        },
+        "codeids": {
+          "default": "",
+          "required": true,
+          "description": "特性ids"
+        },
+        "pageindex": {
+          "default": "",
+          "required": true,
+          "description": "sku"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductPartialGetList",
+      "updatetime": "20170413",
+      "summary": "获取商品",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadUseCount",
+      "updatetime": "20170413",
+      "summary": "绑定的各个不同功能模块的数量",
+      "type": "POST",
+      "params": {
+        "@padid": {
+          "default": "",
+          "required": true,
+          "description": "padid"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductDelete",
+      "updatetime": "20170413",
+      "summary": "删除商品",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderAdd",
+      "updatetime": "20170413",
+      "summary": "新增订单",
+      "type": "POST",
+      "params": {
+        "ordercode": {
+          "default": "",
+          "required": true,
+          "description": "订单编号"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "数量"
+        },
+        "unit": {
+          "default": "",
+          "required": true,
+          "description": "规格"
+        },
+        "unitkey": {
+          "default": "",
+          "required": true,
+          "description": "规格 数字"
+        },
+        "unitvalue": {
+          "default": "",
+          "required": true,
+          "description": "规格 单位"
+        },
+        "hopetime": {
+          "default": "",
+          "required": true,
+          "description": "期望日期"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        },
+        "itemids": {
+          "default": "",
+          "required": true,
+          "description": "订单属性ids"
+        },
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "salesman": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "customer": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "orderdate": {
+          "default": "",
+          "required": true,
+          "description": "下单时间"
+        },
+        "unitcode": {
+          "default": "",
+          "required": true,
+          "description": "工单号"
+        },
+        "issifting": {
+          "default": "",
+          "required": true,
+          "description": "0-普通，1过筛"
+        },
+        "dataroleid": {
+          "default": "",
+          "required": true,
+          "description": "数据权限id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderGetList",
+      "updatetime": "20170413",
+      "summary": "获取订单列表",
+      "type": "POST",
+      "params": {
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单编号"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0新单待排，-1取消，1已排，2生产中，3完成，4运输中，5已入库"
+        },
+        "keyword": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        },
+        "ordercode": {
+          "default": "",
+          "required": true,
+          "description": "订单编号"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "unitcode": {
+          "default": "",
+          "required": true,
+          "description": "工单号码，工单批号"
+        },
+        "issifting": {
+          "default": "",
+          "required": true,
+          "description": "0-正常，1过筛"
+        },
+        "isseft": {
+          "default": "0",
+          "required": true,
+          "description": "0正常，1强制自己，2使用createman参数"
+        },
+        "createman": {
+          "default": "0",
+          "required": true,
+          "description": "创建人"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderReview",
+      "updatetime": "20170413",
+      "summary": "获取追溯",
+      "type": "POST",
+      "params": {
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单编号"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderSet",
+      "updatetime": "20170413",
+      "summary": "订单状态设置",
+      "type": "POST",
+      "params": {
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "-1取消，-2终止"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderInit",
+      "updatetime": "20170413",
+      "summary": "订单状态设置",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderManualSure",
+      "updatetime": "20170413",
+      "summary": "手动拆分订单为工单",
+      "type": "POST",
+      "params": {
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "quantities": {
+          "default": "",
+          "required": true,
+          "description": "每个工单的数量，例如10;30;20"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "订单转工单的数量"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderSure",
+      "updatetime": "20170413",
+      "summary": "订单自动生成工单",
+      "type": "POST",
+      "params": {
+        "orderids": {
+          "default": "",
+          "required": true,
+          "description": "订单ids"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "订单转工单的数量"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowAdd",
+      "updatetime": "20170413",
+      "summary": "新增工序",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "工序名称"
+        },
+        "ismust": {
+          "default": "1",
+          "required": true,
+          "description": "是否必须，1必须，2可选"
+        },
+        "order": {
+          "default": "0",
+          "required": true,
+          "description": "顺序"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "needcheck": {
+          "default": "",
+          "required": true,
+          "description": "需要质检"
+        },
+        "checkunitid": {
+          "default": "B21F3C2D-4B63-483D-81C7-159AFA6C839C",
+          "required": true,
+          "description": "质检单位"
+        },
+        "nonextflow": {
+          "default": "0",
+          "required": true,
+          "description": "是否允许没有后续工序，0不允许，1允许"
+        },
+        "checkcounts": {
+          "default": "",
+          "required": true,
+          "description": "工序质检数量"
+        },
+        "manualcheckcount": {
+          "default": "",
+          "required": true,
+          "description": "手动质检的批次"
+        },
+        "checkunitvalue": {
+          "default": "",
+          "required": true,
+          "description": "质检的规格"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowToMessageAdd",
+      "updatetime": "20170413",
+      "summary": "新增工序对应原因关系",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "messagetypeid": {
+          "default": "1",
+          "required": true,
+          "description": "原因的类型"
+        },
+        "messageids": {
+          "default": "561AB322-88C5-44F8-A242-0E6BEC5A32D6;",
+          "required": true,
+          "description": "原因"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowToMessageDel",
+      "updatetime": "20170413",
+      "summary": "删除工序对应原因关系",
+      "type": "POST",
+      "params": {
+        "flowtoMessageid": {
+          "default": "",
+          "required": true,
+          "description": "工序对应原因"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowToMessageGetList",
+      "updatetime": "20170413",
+      "summary": "读取工序对应原因关系",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowToMessageSort",
+      "updatetime": "20170413",
+      "summary": "工序对应原因关系排序",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "messagetypeid": {
+          "default": "1",
+          "required": true,
+          "description": "原因的类型"
+        },
+        "messageids": {
+          "default": "561AB322-88C5-44F8-A242-0E6BEC5A32D6;",
+          "required": true,
+          "description": "原因"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowGetList",
+      "updatetime": "20170413",
+      "summary": "获取工序列表",
+      "type": "POST",
+      "params": {
+        "ismust": {
+          "default": "1",
+          "required": true,
+          "description": "是否必须，1必须，0可选"
+        },
+        "isfront": {
+          "default": "1",
+          "required": true,
+          "description": "是否前置工序，0全部，1是"
+        },
+        "orderdate": {
+          "default": "",
+          "required": true,
+          "description": "日期"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FlowDelete",
+      "updatetime": "20170413",
+      "summary": "删除工序",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ButtonAdd",
+      "updatetime": "20170413",
+      "summary": "新增系统按钮",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "按钮名称"
+        },
+        "fontcolor": {
+          "default": "#FFFFFF",
+          "required": true,
+          "description": "前景色"
+        },
+        "backcolor": {
+          "default": "#0000FF",
+          "required": true,
+          "description": "背景色"
+        },
+        "buttonid": {
+          "default": "",
+          "required": true,
+          "description": "按钮id"
+        },
+        "code": {
+          "default": "",
+          "required": true,
+          "description": "编号"
+        },
+        "actionid": {
+          "default": "",
+          "required": true,
+          "description": "编号"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ButtonGetList",
+      "updatetime": "20170413",
+      "summary": "获取按钮列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ButtonDelete",
+      "updatetime": "20170413",
+      "summary": "删除按钮",
+      "type": "POST",
+      "params": {
+        "buttonid": {
+          "default": "",
+          "required": true,
+          "description": "按钮id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanButtonAdd",
+      "updatetime": "20170413",
+      "summary": "新增排班按钮配置",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "工序状态"
+        },
+        "buttonid": {
+          "default": "",
+          "required": true,
+          "description": "按钮id"
+        },
+        "planbuttonid": {
+          "default": "",
+          "required": true,
+          "description": "排班按钮设置id"
+        },
+        "isextra": {
+          "default": "0",
+          "required": true,
+          "description": "是否额外排班"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanButtonGetList",
+      "updatetime": "20170413",
+      "summary": "获取按钮列表",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "工序状态"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanButtonDelete",
+      "updatetime": "20170413",
+      "summary": "删除排班按钮",
+      "type": "POST",
+      "params": {
+        "planbuttonid": {
+          "default": "",
+          "required": true,
+          "description": "排班按钮id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceAdd",
+      "updatetime": "20170413",
+      "summary": "新增设备",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "title": {
+          "default": "设备名称",
+          "required": true,
+          "description": "设备名称"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "maxcount": {
+          "default": "",
+          "required": true,
+          "description": "最大生产批次"
+        },
+        "maxquantity": {
+          "default": "",
+          "required": true,
+          "description": "最大生产数量"
+        },
+        "sn": {
+          "default": "",
+          "required": true,
+          "description": "设备类别"
+        },
+        "power": {
+          "default": "0",
+          "required": true,
+          "description": "处理能力，单位是kg/h"
+        },
+        "regionid": {
+          "default": "",
+          "required": true,
+          "description": "所处区域"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceSort",
+      "updatetime": "20170413",
+      "summary": "生产设备排序",
+      "type": "POST",
+      "params": {
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceSet",
+      "updatetime": "20170413",
+      "summary": "设置设备状态",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0禁用，1启用，2检修"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceBind",
+      "updatetime": "20170413",
+      "summary": "设置绑定",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板设备id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，2解绑"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceShowBind",
+      "updatetime": "20170413",
+      "summary": "工序一览绑定",
+      "type": "POST",
+      "params": {
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        },
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板id"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，2解绑"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/BindCheck",
+      "updatetime": "20170413",
+      "summary": "检测当前pad是否绑定",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceGetList",
+      "updatetime": "20170413",
+      "summary": "获取设备列表",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "-1全部，0禁用，1启用"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "isfirstflow": {
+          "default": "",
+          "required": true,
+          "description": "是否第一道工序的设备，0全部，1是"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadDeviceGetList",
+      "updatetime": "20170413",
+      "summary": "获取当前pad绑定的设备列表",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": false,
+          "description": "测试用，实际调用此api不需要传"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/BindDeviceGetList",
+      "updatetime": "20170413",
+      "summary": "获取所有设备列表",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": false,
+          "description": "测试用，实际调用此api不需要传"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitGetList",
+      "updatetime": "20170413",
+      "summary": "获取工单列表",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0新单待排，1队列中，2进行中，3已完成，-1已终止"
+        },
+        "unitids": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        },
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "isconfute": {
+          "default": "0",
+          "required": true,
+          "description": "1-有拒收记录未处理"
+        },
+        "unitcode": {
+          "default": "0",
+          "required": true,
+          "description": "工单批号"
+        },
+        "issifting": {
+          "default": "0",
+          "required": true,
+          "description": "0正常，1过筛"
+        },
+        "isseft": {
+          "default": "0",
+          "required": true,
+          "description": "0正常，1强制自己，2使用createman参数"
+        },
+        "createman": {
+          "default": "0",
+          "required": true,
+          "description": "创建人"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitAutoPlan",
+      "updatetime": "20170413",
+      "summary": "工单自动排班",
+      "type": "POST",
+      "params": {
+        "unitids": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitSet",
+      "updatetime": "20170413",
+      "summary": "工单设置",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "1.工单重新设置,2工单重做，3工单终止,4合并完成"
+        },
+        "ordermessageids": {
+          "default": "",
+          "required": true,
+          "description": "工单订单取消原因"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "合并后排班设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "合并后排班插入的排id"
+        },
+        "supplytime": {
+          "default": "",
+          "required": true,
+          "description": "补登时间"
+        },
+        "issupply": {
+          "default": "0",
+          "required": true,
+          "description": "是否补登"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitMunualPlan",
+      "updatetime": "20170413",
+      "summary": "工单手动排班",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id，被插队的排班id"
+        },
+        "hopestart": {
+          "default": "",
+          "required": true,
+          "description": "指定的排班开始时间"
+        },
+        "thisplanid": {
+          "default": "",
+          "required": true,
+          "description": "需要被移动的排班id"
+        },
+        "ismunual": {
+          "default": "",
+          "required": true,
+          "description": "1手动排班"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitMunualPlanNew",
+      "updatetime": "20170413",
+      "summary": "工单手动排班",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "92253346-1014-444B-97EB-AF1319B09645",
+          "required": true,
+          "description": "工单id"
+        },
+        "deviceid": {
+          "default": "496C6237-FD05-4C63-A038-241BBAE25BC9",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id，被插队的排班id"
+        },
+        "hopestart": {
+          "default": "",
+          "required": true,
+          "description": "指定的排班开始时间"
+        },
+        "thisplanid": {
+          "default": "",
+          "required": true,
+          "description": "需要被移动的排班id"
+        },
+        "ismunual": {
+          "default": "1",
+          "required": true,
+          "description": "1手动排班"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanSet",
+      "updatetime": "20170413",
+      "summary": "设置排班状态",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "quantity": {
+          "default": "0",
+          "required": true,
+          "description": "完成数量"
+        },
+        "destinationPlanid": {
+          "default": "",
+          "required": true,
+          "description": "排班恢复时，插队的地方"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "排班恢复时，插队的地方"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "1排班确认，-1排班撤销，2开始生产，6挂起，8正常登记,9异常登记,10完结,11挂起恢复异常登记"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "部分完成后进入的工序"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "部分完成后进入的工序"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "部分完成后进入的工序"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "部分完成后进入的工序"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "isover": {
+          "default": "0",
+          "required": true,
+          "description": "是否立即完结当前排班，0不是，1是"
+        },
+        "supplytime": {
+          "default": "",
+          "required": true,
+          "description": "补登时间"
+        },
+        "issupply": {
+          "default": "0",
+          "required": true,
+          "description": "是否补登"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanGetList",
+      "updatetime": "20170413",
+      "summary": "获取排班列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0新班未定，1队列中，2生产中，3已完成，null所有"
+        },
+        "statuses": {
+          "default": "",
+          "required": true,
+          "description": "0新班未定，1队列中，2生产中，3已完成，null所有"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "isjump": {
+          "default": "",
+          "required": true,
+          "description": "是否手动排班时候的查询，1是，其他不是"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "orderdate": {
+          "default": "",
+          "required": true,
+          "description": "订单交期"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanCommonGetList",
+      "updatetime": "20170413",
+      "summary": "获取排班列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0新班未定，1队列中，2生产中，3已完成，null所有"
+        },
+        "statuses": {
+          "default": "",
+          "required": true,
+          "description": "0新班未定，1队列中，2生产中，3已完成，null所有"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "isjump": {
+          "default": "",
+          "required": true,
+          "description": "是否手动排班时候的查询，1是，其他不是"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanViewGetList",
+      "updatetime": "20170413",
+      "summary": "排班一览",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "C3E9A809-05C2-40A6-A9DF-7A58D88AE52A",
+          "required": true,
+          "description": "工序id"
+        },
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanOperateGetList",
+      "updatetime": "20170413",
+      "summary": "获取当前pad操作台排班列表-横",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "123456",
+          "required": true,
+          "description": "测试用字段"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanApeakGetList",
+      "updatetime": "20170413",
+      "summary": "获取当前pad操作台排班列表-竖",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "123456",
+          "required": true,
+          "description": "测试用字段"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanJumpGetList",
+      "updatetime": "20170413",
+      "summary": "获取用户手动插队的排班列表",
+      "type": "POST",
+      "params": {
+        "isjump": {
+          "default": "",
+          "required": true,
+          "description": "1：手动排班，2排班调整,4过筛手动排班"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "被调整的排班的id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "跳转的工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanShowGetList",
+      "updatetime": "20170413",
+      "summary": "获取工序一览列表",
+      "type": "POST",
+      "params": {
+        "pageindex": {
+          "default": "0",
+          "required": true,
+          "description": "分页"
+        },
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": "padid"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckUnitAdd",
+      "updatetime": "20170413",
+      "summary": "新增质检单位",
+      "type": "POST",
+      "params": {
+        "checkunitid": {
+          "default": "",
+          "required": true,
+          "description": "质检单位id"
+        },
+        "title": {
+          "default": "桶",
+          "required": true,
+          "description": "名称"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckUnitGetList",
+      "updatetime": "20170413",
+      "summary": "获取质检单位",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckUnitDelete",
+      "updatetime": "20170413",
+      "summary": "删除质检单位",
+      "type": "POST",
+      "params": {
+        "checkunitid": {
+          "default": "",
+          "required": true,
+          "description": "质检单位id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckMessageAdd",
+      "updatetime": "20170413",
+      "summary": "新增质检没通过原因",
+      "type": "POST",
+      "params": {
+        "checkmessageid": {
+          "default": "",
+          "required": true,
+          "description": "质检没通过id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckMessageGetList",
+      "updatetime": "20170413",
+      "summary": "获取质检没通过原因列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckMessageDelete",
+      "updatetime": "20170413",
+      "summary": "删除质检没通过原因",
+      "type": "POST",
+      "params": {
+        "checkmessageid": {
+          "default": "",
+          "required": true,
+          "description": "质检没通过id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderMessageAdd",
+      "updatetime": "20170413",
+      "summary": "新增订单（工单）终止原因",
+      "type": "POST",
+      "params": {
+        "ordermessageid": {
+          "default": "",
+          "required": true,
+          "description": "质检没通过id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderMessageGetList",
+      "updatetime": "20170413",
+      "summary": "获取订单（工单）终止原因列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/OrderMessageDelete",
+      "updatetime": "20170413",
+      "summary": "删除订单（工单）终止原因",
+      "type": "POST",
+      "params": {
+        "ordermessageid": {
+          "default": "",
+          "required": true,
+          "description": "订单（工单）终止原因id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineAdd",
+      "updatetime": "20170413",
+      "summary": "新增流水线",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        },
+        "title": {
+          "default": "一条流水线",
+          "required": true,
+          "description": "流水线名字"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineGetList",
+      "updatetime": "20170413",
+      "summary": "获取流水线",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineDelete",
+      "updatetime": "20170413",
+      "summary": "删除流水线",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineFlowAdd",
+      "updatetime": "20170413",
+      "summary": "新增流水线工序配置",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineFlowGetList",
+      "updatetime": "20170413",
+      "summary": "获取流水线工序配置列表",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/LineFlowDelete",
+      "updatetime": "20170413",
+      "summary": "删除流水线工序配置",
+      "type": "POST",
+      "params": {
+        "lineflowid": {
+          "default": "",
+          "required": true,
+          "description": "流水线工序配置id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductLineAdd",
+      "updatetime": "20170413",
+      "summary": "新增产品流水线配置",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductLineGetList",
+      "updatetime": "20170413",
+      "summary": "获取产品流水线配置列表",
+      "type": "POST",
+      "params": {
+        "lineid": {
+          "default": "",
+          "required": true,
+          "description": "流水线id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductLineDelete",
+      "updatetime": "20170413",
+      "summary": "删除产品流水线配置",
+      "type": "POST",
+      "params": {
+        "productlineid": {
+          "default": "",
+          "required": true,
+          "description": "产品流水线配置id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductFlowAdd",
+      "updatetime": "20170413",
+      "summary": "新增产品可选工序配置",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "可选工序id"
+        },
+        "productids": {
+          "default": "",
+          "required": true,
+          "description": "产品ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductFlowGetList",
+      "updatetime": "20170413",
+      "summary": "获取产品可选工序配置列表",
+      "type": "POST",
+      "params": {
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "可选工序id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductFlowDelete",
+      "updatetime": "20170413",
+      "summary": "删除产品可选工序配置",
+      "type": "POST",
+      "params": {
+        "productflowid": {
+          "default": "",
+          "required": true,
+          "description": "产品可选工序配置id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ItemAdd",
+      "updatetime": "20170413",
+      "summary": "新增订单工单状态选项",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "选项名称"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "限时图片地址"
+        },
+        "itemid": {
+          "default": "",
+          "required": true,
+          "description": "选项id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ItemGetList",
+      "updatetime": "20170413",
+      "summary": "获取订单工单状态选项",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ItemDelete",
+      "updatetime": "20170413",
+      "summary": "删除订单工单状态选项",
+      "type": "POST",
+      "params": {
+        "itemid": {
+          "default": "",
+          "required": true,
+          "description": "选项id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/GroupAdd",
+      "updatetime": "20170413",
+      "summary": "新增班组",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "班组名称"
+        },
+        "starthour": {
+          "default": "",
+          "required": true,
+          "description": "上班时间"
+        },
+        "endhour": {
+          "default": "",
+          "required": true,
+          "description": "下班时间"
+        },
+        "groupid": {
+          "default": "",
+          "required": true,
+          "description": "班组id"
+        },
+        "order": {
+          "default": "",
+          "required": true,
+          "description": "顺序"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/GroupGetList",
+      "updatetime": "20170413",
+      "summary": "获取班组列表",
+      "type": "POST",
+      "params": {
+        "iscurrent": {
+          "default": "",
+          "required": true,
+          "description": "1-当前"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/GroupDelete",
+      "updatetime": "20170413",
+      "summary": "删除班组",
+      "type": "POST",
+      "params": {
+        "itemid": {
+          "default": "",
+          "required": true,
+          "description": "班组id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckAdd",
+      "updatetime": "20170413",
+      "summary": "新增质检送样",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "生产排班id"
+        },
+        "count": {
+          "default": "",
+          "required": true,
+          "description": "送检批次"
+        },
+        "checkunitid": {
+          "default": "",
+          "required": true,
+          "description": "质检单位id"
+        },
+        "checkproperties": {
+          "default": "",
+          "required": true,
+          "description": "质检属性"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": "nfcno"
+        },
+        "checkboxid": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "状态，新交互传1"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckGetList",
+      "updatetime": "20170413",
+      "summary": "获取质检送样列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "生产排班id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "质检结果，0-新，1-等待质检，2正在质检，3质检完成"
+        },
+        "checkunit": {
+          "default": "",
+          "required": true,
+          "description": "质检单位id"
+        },
+        "isoperate": {
+          "default": "",
+          "required": true,
+          "description": "是否操作台查询，1-是"
+        },
+        "keyword": {
+          "default": "",
+          "required": true,
+          "description": "关键字"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckSet",
+      "updatetime": "20170413",
+      "summary": "质检送样设置",
+      "type": "POST",
+      "params": {
+        "checkid": {
+          "default": "",
+          "required": true,
+          "description": "质检送样id"
+        },
+        "checkids": {
+          "default": "",
+          "required": true,
+          "description": "质检送样ids"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "设置状态，1-送检到达，2开始质检，3质检完成"
+        },
+        "result": {
+          "default": "",
+          "required": true,
+          "description": "0-没通过，1通过,2让步放行"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "checkmessageids": {
+          "default": "",
+          "required": true,
+          "description": "没通过的理由ids"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": "nfcno"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "nfcno"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RepositoryAdd",
+      "updatetime": "20170413",
+      "summary": "新增仓库",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "仓库名称"
+        },
+        "regionid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        },
+        "parentid": {
+          "default": "",
+          "required": true,
+          "description": "父仓库id"
+        },
+        "repositoryid": {
+          "default": "",
+          "required": true,
+          "description": "仓库id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RepositoryGetList",
+      "updatetime": "20170413",
+      "summary": "获取仓库列表",
+      "type": "POST",
+      "params": {
+        "regionid": {
+          "default": "",
+          "required": true,
+          "description": "区域id"
+        },
+        "parentid": {
+          "default": "",
+          "required": true,
+          "description": "父仓库id"
+        },
+        "repositoryid": {
+          "default": "",
+          "required": true,
+          "description": "仓库id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RepositoryDelete",
+      "updatetime": "20170413",
+      "summary": "删除仓库",
+      "type": "POST",
+      "params": {
+        "repositoryid": {
+          "default": "",
+          "required": true,
+          "description": "仓库id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RepositoryIn",
+      "updatetime": "20170413",
+      "summary": "订单产品入库",
+      "type": "POST",
+      "params": {
+        "repositoryid": {
+          "default": "",
+          "required": true,
+          "description": "仓库id"
+        },
+        "orderids": {
+          "default": "",
+          "required": true,
+          "description": "订单ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/Transfer",
+      "updatetime": "20170413",
+      "summary": "订单产品运输",
+      "type": "POST",
+      "params": {
+        "transferuserid": {
+          "default": "",
+          "required": false,
+          "description": "运输人"
+        },
+        "orderids": {
+          "default": "",
+          "required": true,
+          "description": "订单ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadAdd",
+      "updatetime": "20170413",
+      "summary": "新增平板",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "平板名称"
+        },
+        "padsn": {
+          "default": "",
+          "required": true,
+          "description": "平板id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadGetList",
+      "updatetime": "20170413",
+      "summary": "获取平板列表",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadDelete",
+      "updatetime": "20170413",
+      "summary": "删除平板",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckPropertyAdd",
+      "updatetime": "20170413",
+      "summary": "新增质检属性",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "质检属性名称"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "图片地址"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckPropertyGetList",
+      "updatetime": "20170413",
+      "summary": "获取质检属性列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckPropertyDelete",
+      "updatetime": "20170413",
+      "summary": "删除质检属性",
+      "type": "POST",
+      "params": {
+        "checkpropertyid": {
+          "default": "",
+          "required": true,
+          "description": "质检id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxAdd",
+      "updatetime": "20170413",
+      "summary": "新增质检盒子",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子名称"
+        },
+        "order": {
+          "default": "",
+          "required": true,
+          "description": "顺序"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxGetList",
+      "updatetime": "20170413",
+      "summary": "获取质检盒子列表",
+      "type": "POST",
+      "params": {
+        "pageindex": {
+          "default": "",
+          "required": true,
+          "description": "页数"
+        },
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": "页数"
+        },
+        "isshow": {
+          "default": "1",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxShow",
+      "updatetime": "20170413",
+      "summary": "质检一览",
+      "type": "POST",
+      "params": {
+        "pageindex": {
+          "default": "",
+          "required": true,
+          "description": "页数"
+        },
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": "页数"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxDelete",
+      "updatetime": "20170413",
+      "summary": "删除质检盒子",
+      "type": "POST",
+      "params": {
+        "checkboxid": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxSort",
+      "updatetime": "20170413",
+      "summary": "质检盒子排序",
+      "type": "POST",
+      "params": {
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxShowBind",
+      "updatetime": "20170413",
+      "summary": "质检盒子一览绑定排序",
+      "type": "POST",
+      "params": {
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子ids"
+        },
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板id"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，2解绑"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckBoxBind",
+      "updatetime": "20170413",
+      "summary": "质检盒子绑定",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "平板设备id"
+        },
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子ids"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，2解绑"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePowerAdd",
+      "updatetime": "20170413",
+      "summary": "新增设备生产能力",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "power": {
+          "default": "",
+          "required": true,
+          "description": "生产能力"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePowerGetList",
+      "updatetime": "20170413",
+      "summary": "获取设备生产能力列表",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePowerDelete",
+      "updatetime": "20170413",
+      "summary": "删除设备生产能力",
+      "type": "POST",
+      "params": {
+        "devicepowerid": {
+          "default": "",
+          "required": true,
+          "description": "设备生产能力id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PrepareTypeAdd",
+      "updatetime": "20170413",
+      "summary": "新增准备类型",
+      "type": "POST",
+      "params": {
+        "preparetypeid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "准备类型名字"
+        },
+        "cost": {
+          "default": "",
+          "required": true,
+          "description": "需要时间"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "图标"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PrepareTypeGetList",
+      "updatetime": "20170413",
+      "summary": "获取准备类型列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PrepareTypeDelete",
+      "updatetime": "20170413",
+      "summary": "删除准备类型",
+      "type": "POST",
+      "params": {
+        "preparetypeid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePrepareAdd",
+      "updatetime": "20170413",
+      "summary": "新增设备准备时间",
+      "type": "POST",
+      "params": {
+        "deviceprepareid": {
+          "default": "",
+          "required": true,
+          "description": "设备准备时间id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "productids": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "preparetypeid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        },
+        "cost": {
+          "default": "",
+          "required": true,
+          "description": "准备时间"
+        },
+        "typevalue": {
+          "default": "0",
+          "required": true,
+          "description": "0前，1后"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePrepareGetList",
+      "updatetime": "20170413",
+      "summary": "获取设备准备时间列表",
+      "type": "POST",
+      "params": {
+        "deviceprepareid": {
+          "default": "",
+          "required": true,
+          "description": "设备准备时间id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "preparetypeid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePrepareDel",
+      "updatetime": "20170413",
+      "summary": "获取设备准备时间列表",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "preparetypeid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DevicePrepareDelete",
+      "updatetime": "20170413",
+      "summary": "删除准备类型",
+      "type": "POST",
+      "params": {
+        "deviceprepareid": {
+          "default": "",
+          "required": true,
+          "description": "设备准备时间id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RefreshSpanGetList",
+      "updatetime": "20170413",
+      "summary": "获取刷新时间间隔",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ScreenAdd",
+      "updatetime": "20170413",
+      "summary": "新增截屏",
+      "type": "POST",
+      "params": {
+        "screenid": {
+          "default": "",
+          "required": true,
+          "description": "截屏地址"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "截屏地址"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ObjectBind",
+      "updatetime": "20170413",
+      "summary": "设备对象和pad绑定",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": "padid"
+        },
+        "objectids": {
+          "default": "",
+          "required": true,
+          "description": "对象ids，可以是deviceids或者checkboxids"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1绑定，2解绑"
+        },
+        "bindoperate": {
+          "default": "",
+          "required": true,
+          "description": "1排班一览绑定，2工序一览绑定，3质检一览绑定"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceBindView",
+      "updatetime": "20170413",
+      "summary": "设备对象和pad绑定列表",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "66Y6R16428003824",
+          "required": true,
+          "description": "padid"
+        },
+        "bindoperate": {
+          "default": "",
+          "required": true,
+          "description": "1排班一览绑定，2工序一览绑定，3质检一览绑定"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductSetPartial",
+      "updatetime": "20170413",
+      "summary": "设置产品配比",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "mixflowid": {
+          "default": "",
+          "required": true,
+          "description": "合并工序"
+        },
+        "partials": {
+          "default": "",
+          "required": true,
+          "description": "productid,partialid,percent"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageAdd",
+      "updatetime": "20170413",
+      "summary": "添加原因",
+      "type": "POST",
+      "params": {
+        "messageid": {
+          "default": "",
+          "required": true,
+          "description": "原因id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "typeid": {
+          "default": "",
+          "required": true,
+          "description": "分类id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageGetList",
+      "updatetime": "20170413",
+      "summary": "获取原因列表",
+      "type": "POST",
+      "params": {
+        "typeid": {
+          "default": "",
+          "required": true,
+          "description": "分类id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageDelete",
+      "updatetime": "20170413",
+      "summary": "删除原因",
+      "type": "POST",
+      "params": {
+        "messageid": {
+          "default": "",
+          "required": true,
+          "description": "原因id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageTypeGetList",
+      "updatetime": "20170413",
+      "summary": "获取原因类别",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanNextFlows",
+      "updatetime": "20170413",
+      "summary": "后续工序",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ExtraPlan",
+      "updatetime": "20170413",
+      "summary": "额外工序",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "prepareid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        },
+        "cost": {
+          "default": "",
+          "required": true,
+          "description": "花费时间"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "创建出来的额外排班的状态"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ExtraPlanPreview",
+      "updatetime": "20170413",
+      "summary": "额外工序",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "prepareid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        },
+        "cost": {
+          "default": "",
+          "required": true,
+          "description": "花费时间"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ExtraPlanPreview",
+      "updatetime": "20170413",
+      "summary": "额外工序",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "prepareid": {
+          "default": "",
+          "required": true,
+          "description": "准备类型id"
+        },
+        "cost": {
+          "default": "",
+          "required": true,
+          "description": "花费时间"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageRecordGetList",
+      "updatetime": "20170413",
+      "summary": "获取记录列表",
+      "type": "POST",
+      "params": {
+        "messagetypeids": {
+          "default": "",
+          "required": true,
+          "description": "记录类型id"
+        },
+        "planids": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "orderids": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "unitids": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "checkids": {
+          "default": "",
+          "required": true,
+          "description": "质检id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PartialFinishGetList",
+      "updatetime": "20170413",
+      "summary": "获取部分完成记录列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "finishtype": {
+          "default": "",
+          "required": true,
+          "description": "0正常登记，1异常登记"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ApplyButtons",
+      "updatetime": "20170413",
+      "summary": "获取操作按钮",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "记录类型id"
+        },
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "orderid": {
+          "default": "",
+          "required": true,
+          "description": "订单id"
+        },
+        "applytype": {
+          "default": "1",
+          "required": true,
+          "description": "1排班，2工单，3订单"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FinishRecordAdd",
+      "updatetime": "20170413",
+      "summary": "完成入库",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "quantities": {
+          "default": "",
+          "required": true,
+          "description": "json数组字符串producttype,quantity,messageids,messagetypeid,memo,files"
+        },
+        "supplytime": {
+          "default": "",
+          "required": true,
+          "description": "补登时间"
+        },
+        "issupply": {
+          "default": "0",
+          "required": true,
+          "description": "是否补登"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FinishRecordGetList",
+      "updatetime": "20170413",
+      "summary": "获取完成入库记录",
+      "type": "POST",
+      "params": {
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        },
+        "producttype": {
+          "default": "",
+          "required": true,
+          "description": "产品类型"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FinishRecordEdit",
+      "updatetime": "20170413",
+      "summary": "入库记录修改",
+      "type": "POST",
+      "params": {
+        "quantityid": {
+          "default": "",
+          "required": true,
+          "description": "入库记录id"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "图片"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EntityPropertyTypeGetList",
+      "updatetime": "20170413",
+      "summary": "获取属性类别",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EntityPropertyTypeAdd",
+      "updatetime": "20170413",
+      "summary": "获取属性类别",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EntityPropertyAdd",
+      "updatetime": "20170413",
+      "summary": "新增属性",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": ""
+        },
+        "code": {
+          "default": "",
+          "required": true,
+          "description": "编号"
+        },
+        "entitypropertyid": {
+          "default": "",
+          "required": true,
+          "description": "通用属性id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EntityPropertyDelete",
+      "updatetime": "20170413",
+      "summary": "删除属性",
+      "type": "POST",
+      "params": {
+        "entitypropertyid": {
+          "default": "",
+          "required": true,
+          "description": "通用属性id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EntityPropertyGetList",
+      "updatetime": "20170413",
+      "summary": "获取属性类别",
+      "type": "POST",
+      "params": {
+        "type": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/InstancePropertyEdit",
+      "updatetime": "20170413",
+      "summary": "设置对象属性",
+      "type": "POST",
+      "params": {
+        "instanceid": {
+          "default": "",
+          "required": true,
+          "description": "对象id"
+        },
+        "propertyids": {
+          "default": "",
+          "required": true,
+          "description": "属性ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SuspendMessageGetList",
+      "updatetime": "20170413",
+      "summary": "挂起恢复原因选择建议列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SuspendMessageAdd",
+      "updatetime": "20170413",
+      "summary": "设置挂起恢复原因选择建议列表",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "图片"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ImportProduct",
+      "updatetime": "20170413",
+      "summary": "导入产品",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitPlanPreview",
+      "updatetime": "20170413",
+      "summary": "工单排班预览",
+      "type": "POST",
+      "params": {
+        "unitids": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        },
+        "issifting": {
+          "default": "1正常，2过筛",
+          "required": true,
+          "description": "成品类型"
+        },
+        "plantime": {
+          "default": "2017-04-12",
+          "required": true,
+          "description": "排班开始时间"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanPreviewGetList",
+      "updatetime": "20170413",
+      "summary": "排班预览列表获取",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanPreviewGetListNone",
+      "updatetime": "20170413",
+      "summary": "排班预览列表获取",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanPreview",
+      "updatetime": "20170413",
+      "summary": "排班预览调整",
+      "type": "POST",
+      "params": {
+        "thisplanid": {
+          "default": "",
+          "required": true,
+          "description": "被调整排班id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "插入位置处planid"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MakeSurePreview",
+      "updatetime": "20170413",
+      "summary": "保存排班预览调整",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/WaitTransferShow",
+      "updatetime": "20170413",
+      "summary": "获取待运输成品",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "1",
+          "required": true,
+          "description": "1 合格品，2不良品"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MakeSureTransfer",
+      "updatetime": "20170413",
+      "summary": "确认待运输成品",
+      "type": "POST",
+      "params": {
+        "quantities": {
+          "default": "",
+          "required": true,
+          "description": "确认的待运输成品,quantityid$quantity;quantityid$quantity"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferingShow",
+      "updatetime": "20170413",
+      "summary": "获取待运输成品",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "1",
+          "required": true,
+          "description": "1 合格品，2不良品"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MakeSureUnitSaved",
+      "updatetime": "20170413",
+      "summary": "确认成品入库",
+      "type": "POST",
+      "params": {
+        "quantities": {
+          "default": "",
+          "required": true,
+          "description": "确认成品入库quantityid$quantity;quantityid$quantity"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductDeviceAdd",
+      "updatetime": "20170413",
+      "summary": "产品和设备推荐关系配置",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "产品id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "1推荐，2不推荐"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductDeviceDelete",
+      "updatetime": "20170413",
+      "summary": "删除产品和设备推荐关系配置",
+      "type": "POST",
+      "params": {
+        "productdeviceid": {
+          "default": "",
+          "required": true,
+          "description": "产品设备推荐关系id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferCount",
+      "updatetime": "20170413",
+      "summary": "运输统计",
+      "type": "POST",
+      "params": {
+        "counttype": {
+          "default": "",
+          "required": true,
+          "description": "1待运输，2待入库"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SetWaitTransfer",
+      "updatetime": "20170413",
+      "summary": "设置待运输数量",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "待运输数量"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "1合格，2不合格，3半成品"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitPlan",
+      "updatetime": "20170413",
+      "summary": "工单排班",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "工单id"
+        },
+        "ispreview": {
+          "default": "0",
+          "required": true,
+          "description": "是否预排"
+        },
+        "deviceid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "被插入的排版id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyAdd",
+      "updatetime": "20170413",
+      "summary": "新增sku属性列表",
+      "type": "POST",
+      "params": {
+        "skupropertyid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性id"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyGetList",
+      "updatetime": "20170413",
+      "summary": "获取sku属性列表",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyDelete",
+      "updatetime": "20170413",
+      "summary": "删除sku属性",
+      "type": "POST",
+      "params": {
+        "skupropertyid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "sku属性id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeAdd",
+      "updatetime": "20170413",
+      "summary": "新增sku属性编码",
+      "type": "POST",
+      "params": {
+        "skupropertyid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性id"
+        },
+        "code": {
+          "default": "",
+          "required": true,
+          "description": "编号"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "标题"
+        },
+        "skupropertycodeid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性编码id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeGetList",
+      "updatetime": "20170413",
+      "summary": "获取sku属性列表",
+      "type": "POST",
+      "params": {
+        "skupropertyid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeDelete",
+      "updatetime": "20170413",
+      "summary": "删除sku属性",
+      "type": "POST",
+      "params": {
+        "skupropertycodeid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性编码id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeProductAdd",
+      "updatetime": "20170413",
+      "summary": "新增sku属性编码和产品关系配置",
+      "type": "POST",
+      "params": {
+        "skupropertycodeids": {
+          "default": "",
+          "required": true,
+          "description": "sku属性编码ids"
+        },
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeProductGetList",
+      "updatetime": "20170413",
+      "summary": "获取sku属性和商品对应关系列表",
+      "type": "POST",
+      "params": {
+        "productid": {
+          "default": "",
+          "required": true,
+          "description": "商品id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeDeviceAdd",
+      "updatetime": "20170413",
+      "summary": "新增sku属性编码和设备关系配置",
+      "type": "POST",
+      "params": {
+        "skupropertycodeids": {
+          "default": "",
+          "required": true,
+          "description": "sku属性编码ids"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceToCheckBoxAdd",
+      "updatetime": "20170413",
+      "summary": "增加device和checkbox对应关系",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "设备id"
+        },
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "检查盒子id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceToCheckBoxDelete",
+      "updatetime": "20170413",
+      "summary": "删除device和checkbox对应关系",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "设备id"
+        },
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "检查盒子id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/DeviceToCheckBoxGetList",
+      "updatetime": "20170413",
+      "summary": "读取device和checkbox对应关系",
+      "type": "POST",
+      "params": {
+        "deviceids": {
+          "default": "00000000-0000-0000-0000-000000000000",
+          "required": true,
+          "description": "设备id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeDeviceGetList",
+      "updatetime": "20170413",
+      "summary": "获取sku属性和谁被对应关系列表",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "skupropertycodeid": {
+          "default": "",
+          "required": true,
+          "description": "sku属性id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageRecordAdd",
+      "updatetime": "20170413",
+      "summary": "添加原因",
+      "type": "POST",
+      "params": {
+        "orderid": {
+          "default": "",
+          "required": false,
+          "description": "订单id"
+        },
+        "unitid": {
+          "default": "",
+          "required": false,
+          "description": "工单id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "checkid": {
+          "default": "",
+          "required": true,
+          "description": "检查id"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SetWaitTransferRecordGetList",
+      "updatetime": "20170413",
+      "summary": "获取修改待运输记录",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "settype": {
+          "default": "",
+          "required": true,
+          "description": "1-合格，2不合格，3半成品"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SetPlanCheck",
+      "updatetime": "20170413",
+      "summary": "设置需要质检的工单",
+      "type": "POST",
+      "params": {
+        "checks": {
+          "default": "",
+          "required": true,
+          "description": "unitid,flowid;unitid,flowid"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/RemovePlanPreview",
+      "updatetime": "20170413",
+      "summary": "移除预排班",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "预排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CanclePreview",
+      "updatetime": "20170413",
+      "summary": "重置所有预排班",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitConfuteGetList",
+      "updatetime": "20170413",
+      "summary": "获取拒收的工单",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitViewList",
+      "updatetime": "20170413",
+      "summary": "交期一览",
+      "type": "POST",
+      "params": {
+        "orderdate": {
+          "default": "",
+          "required": true,
+          "description": "交货日期"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/FinishRecordConfute",
+      "updatetime": "20170413",
+      "summary": "拒收入库",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "qualified": {
+          "default": "",
+          "required": true,
+          "description": "合格品数量"
+        },
+        "unqualified": {
+          "default": "",
+          "required": true,
+          "description": "不合格品数量"
+        },
+        "halffinish": {
+          "default": "",
+          "required": true,
+          "description": "半成品数量"
+        },
+        "qualifiedreal": {
+          "default": "",
+          "required": true,
+          "description": "合格品真实数量"
+        },
+        "unqualifiedreal": {
+          "default": "",
+          "required": true,
+          "description": "不合格品真实数量"
+        },
+        "halffinishreal": {
+          "default": "",
+          "required": true,
+          "description": "半成品真实数量"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PadUseGetlist",
+      "updatetime": "20170413",
+      "summary": "pad绑定设备等一览",
+      "type": "POST",
+      "params": {
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "checkboxid": {
+          "default": "",
+          "required": true,
+          "description": "checkboxid"
+        },
+        "padid": {
+          "default": "868090027355686",
+          "required": true,
+          "description": "padid"
+        },
+        "typeid": {
+          "default": "1",
+          "required": true,
+          "description": "1 PlanShow  2, CheckBoxShow  3 CheckBox  4  DeviceShow  5 Device"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanShowBind",
+      "updatetime": "20170413",
+      "summary": "planshow绑定解绑pad",
+      "type": "POST",
+      "params": {
+        "padid": {
+          "default": "",
+          "required": true,
+          "description": "padid"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        },
+        "bindtype": {
+          "default": "",
+          "required": true,
+          "description": "1 绑定 2解绑"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeRelationAdd",
+      "updatetime": "20170413",
+      "summary": "新增冲突关系",
+      "type": "POST",
+      "params": {
+        "codeid": {
+          "default": "BF517E1C-62B0-4251-902B-006817A7E7EA",
+          "required": true,
+          "description": "第一个商品特性的属性"
+        },
+        "anothercodeid": {
+          "default": "FE6968F5-CFD5-4BC5-B2A8-5ECFAB1300C1",
+          "required": true,
+          "description": "第二个商品特性的属性"
+        },
+        "relationtype": {
+          "default": "1",
+          "required": true,
+          "description": "商品特性之间关系 1 不可跟随  2 不可相邻  3 只能相邻 4 只能跟随"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeRelationGetlist",
+      "updatetime": "20170413",
+      "summary": "读取冲突关系",
+      "type": "POST",
+      "params": {
+        "codeid": {
+          "default": "BF517E1C-62B0-4251-902B-006817A7E7EA",
+          "required": true,
+          "description": "第一个商品特性的属性"
+        },
+        "anothercodeid": {
+          "default": "FE6968F5-CFD5-4BC5-B2A8-5ECFAB1300C1",
+          "required": true,
+          "description": "第二个商品特性的属性"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeRelationDel",
+      "updatetime": "20170413",
+      "summary": "删除冲突关系",
+      "type": "POST",
+      "params": {
+        "SkuPropertyCodeRelationid": {
+          "default": "BF517E1C-62B0-4251-902B-006817A7E7EA",
+          "required": true,
+          "description": "冲突关系 id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeGetListAll",
+      "updatetime": "20170413",
+      "summary": "读取所有商品特性的属性",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ConfuteRecordSet",
+      "updatetime": "20170413",
+      "summary": "重新入库入库",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "",
+          "required": true,
+          "description": "拒收入库记录id"
+        },
+        "qualified": {
+          "default": "",
+          "required": true,
+          "description": "合格品数量"
+        },
+        "unqualified": {
+          "default": "",
+          "required": true,
+          "description": "不合格品数量"
+        },
+        "halffinish": {
+          "default": "",
+          "required": true,
+          "description": "半成品数量"
+        },
+        "qualifiedreal": {
+          "default": "",
+          "required": true,
+          "description": "合格品真实数量"
+        },
+        "unqualifiedreal": {
+          "default": "",
+          "required": true,
+          "description": "不合格品真实数量"
+        },
+        "halffinishreal": {
+          "default": "",
+          "required": true,
+          "description": "半成品真实数量"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MessageTypeAdd",
+      "updatetime": "20170413",
+      "summary": "获取入库记录列表",
+      "type": "POST",
+      "params": {
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "原因类别名称"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferSaveRecordGetList",
+      "updatetime": "20170413",
+      "summary": "获取入库记录列表",
+      "type": "POST",
+      "params": {
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "0：未设置库位的记录"
+        },
+        "typevalue": {
+          "default": "",
+          "required": true,
+          "description": "1合格品2不合格3半成品"
+        },
+        "isfilter": {
+          "default": "",
+          "required": true,
+          "description": "是否过滤"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SetTransferSaveCode",
+      "updatetime": "20170413",
+      "summary": "设置入库库位",
+      "type": "POST",
+      "params": {
+        "codes": {
+          "default": "",
+          "required": true,
+          "description": "recordid$quantity$code;recordid$quantity$code"
+        },
+        "isfinish": {
+          "default": "0",
+          "required": true,
+          "description": "0默认，1强制完成"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SetQuantityCode",
+      "updatetime": "20170413",
+      "summary": "设置入库库位",
+      "type": "POST",
+      "params": {
+        "codes": {
+          "default": "",
+          "required": true,
+          "description": "quantityid$quantity$code;quantityid$quantity$code"
+        },
+        "isfinish": {
+          "default": "0",
+          "required": true,
+          "description": "0默认，1强制完成"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/EditTransferSaveCode",
+      "updatetime": "20170413",
+      "summary": "编辑入库库位",
+      "type": "POST",
+      "params": {
+        "codes": {
+          "default": "",
+          "required": true,
+          "description": "codeid$code;codeid$code"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/MakeSureTransferSaveCode",
+      "updatetime": "20170413",
+      "summary": "确认库位信息",
+      "type": "POST",
+      "params": {
+        "recordids": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PartialRecordGetList",
+      "updatetime": "20170413",
+      "summary": "获取登记记录",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PartialRecordSet",
+      "updatetime": "20170413",
+      "summary": "修改登记数量",
+      "type": "POST",
+      "params": {
+        "recordid": {
+          "default": "",
+          "required": true,
+          "description": "登记记录id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "数量"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountToCheckBoxAdd",
+      "updatetime": "20170413",
+      "summary": "人员与质检盒子绑定",
+      "type": "POST",
+      "params": {
+        "checkboxids": {
+          "default": "",
+          "required": true,
+          "description": "质检盒子ids"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountTodeviceAdd",
+      "updatetime": "20170413",
+      "summary": "人员与质检盒子绑定",
+      "type": "POST",
+      "params": {
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountToDeviceGetlist",
+      "updatetime": "20170413",
+      "summary": "人员与设备绑定",
+      "type": "POST",
+      "params": {
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountToCheckBoxGetlist",
+      "updatetime": "20170413",
+      "summary": "人员与质检盒子绑定",
+      "type": "POST",
+      "params": {
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": ""
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductTypedel",
+      "updatetime": "20170413",
+      "summary": "删除产品类型 成品半成品不合格品等",
+      "type": "POST",
+      "params": {
+        "producttype": {
+          "default": "",
+          "required": true,
+          "description": "产品类型id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductTypeAdd",
+      "updatetime": "20170413",
+      "summary": "新增产品类型 成品半成品不合格品等",
+      "type": "POST",
+      "params": {
+        "producttype": {
+          "default": "",
+          "required": true,
+          "description": "商品类型"
+        },
+        "title": {
+          "default": "",
+          "required": true,
+          "description": "商品类型名称"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitCurrentView",
+      "updatetime": "20170413",
+      "summary": "实况一览，status-1未生产，2生产中，3待运输，4运输中，5已入库",
+      "type": "POST",
+      "params": {
+        "dateplan": {
+          "default": "",
+          "required": true,
+          "description": "排班日期"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckPlanList",
+      "updatetime": "20170413",
+      "summary": "我负责质检送样的排班",
+      "type": "POST",
+      "params": {
+        "userid": {
+          "default": "",
+          "required": true,
+          "description": "我的id"
+        },
+        "nfcno": {
+          "default": "",
+          "required": true,
+          "description": "nfcno"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UserCheckList",
+      "updatetime": "20170413",
+      "summary": "我负责的质检",
+      "type": "POST",
+      "params": {
+        "userid": {
+          "default": "",
+          "required": true,
+          "description": "我的id"
+        },
+        "status": {
+          "default": "",
+          "required": true,
+          "description": "1-待检，2-待出报告"
+        },
+        "statuses": {
+          "default": "",
+          "required": true,
+          "description": "1-待检，2-待出报告,3已出报告"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始日期"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束日期"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductTypeGetList",
+      "updatetime": "20170413",
+      "summary": "工单完成品类型",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ProductHandleList",
+      "updatetime": "20170413",
+      "summary": "成品处理配置",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitEdit",
+      "updatetime": "20170413",
+      "summary": "修改工单号和数量",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": false,
+          "description": "工单id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "数量"
+        },
+        "unitcode": {
+          "default": "",
+          "required": true,
+          "description": "工单号"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类别id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/SkuPropertyCodeDeviceInit",
+      "updatetime": "20170413",
+      "summary": "初始化设备和商品属性对应关系",
+      "type": "POST",
+      "params": { },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferUnitList",
+      "updatetime": "20170413",
+      "summary": "成品处理配置",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "",
+          "required": true,
+          "description": "1待运输2运输中"
+        },
+        "isconfute": {
+          "default": "",
+          "required": true,
+          "description": "1拒收"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferUnitQuantityList",
+      "updatetime": "20170413",
+      "summary": "成品处理配置",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "",
+          "required": true,
+          "description": "1待运输2运输中"
+        },
+        "isconfute": {
+          "default": "",
+          "required": true,
+          "description": "1拒收"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/TransferQuantityList",
+      "updatetime": "20170413",
+      "summary": "工单产品列表",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "",
+          "required": true,
+          "description": "1待运输2运输中"
+        },
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        },
+        "isconfute": {
+          "default": "",
+          "required": true,
+          "description": "0-正常，1-被拒"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanQuantityHistory",
+      "updatetime": "20170413",
+      "summary": "登记完成历史记录",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ConfuteQuantityList",
+      "updatetime": "20170413",
+      "summary": "拒收记录",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ConfuteQuantity",
+      "updatetime": "20170413",
+      "summary": "拒收入库",
+      "type": "POST",
+      "params": {
+        "quantityid": {
+          "default": "",
+          "required": true,
+          "description": "数量记录id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "数量"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/ConfuteQuantitySet",
+      "updatetime": "20170413",
+      "summary": "重新入库",
+      "type": "POST",
+      "params": {
+        "quantityid": {
+          "default": "",
+          "required": true,
+          "description": "拒收入库记录id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "合格品数量"
+        },
+        "messageids": {
+          "default": "",
+          "required": true,
+          "description": "原因"
+        },
+        "messagetypeid": {
+          "default": "",
+          "required": true,
+          "description": "原因类型id"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanStateViewList",
+      "updatetime": "20170413",
+      "summary": "排班视图",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "flowid": {
+          "default": "",
+          "required": true,
+          "description": "工序id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitMergeList",
+      "updatetime": "20170413",
+      "summary": "工单合并视图",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanCheckList",
+      "updatetime": "20170413",
+      "summary": "排班质检状态",
+      "type": "POST",
+      "params": {
+        "unitids": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnitJumpPreview",
+      "updatetime": "20170413",
+      "summary": "预排班插队",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备id"
+        },
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanEdit",
+      "updatetime": "20170413",
+      "summary": "编辑排班",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "工单ids"
+        },
+        "realstart": {
+          "default": "",
+          "required": true,
+          "description": "真实的开始时间"
+        },
+        "realend": {
+          "default": "",
+          "required": true,
+          "description": "真实的结束时间"
+        },
+        "supplytime": {
+          "default": "",
+          "required": true,
+          "description": "补登时间"
+        },
+        "issupply": {
+          "default": "0",
+          "required": true,
+          "description": "是否补登"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountDeviceOperateAdd",
+      "updatetime": "20170413",
+      "summary": "新增设备操作人",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "用户id"
+        },
+        "deviceids": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountDeviceOperateList",
+      "updatetime": "20170413",
+      "summary": "获取设备操作人列表",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "用户id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/AccountDeviceOperateDelete",
+      "updatetime": "20170413",
+      "summary": "删除设备操作人",
+      "type": "POST",
+      "params": {
+        "personid": {
+          "default": "",
+          "required": true,
+          "description": "用户id"
+        },
+        "deviceid": {
+          "default": "",
+          "required": true,
+          "description": "设备ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/QuantityCodeList",
+      "updatetime": "20170413",
+      "summary": "库位列表",
+      "type": "POST",
+      "params": {
+        "producttype": {
+          "default": "",
+          "required": true,
+          "description": "产品类型"
+        },
+        "starttime": {
+          "default": "",
+          "required": true,
+          "description": "开始时间"
+        },
+        "endtime": {
+          "default": "",
+          "required": true,
+          "description": "结束时间"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/QuantityCodeEdit",
+      "updatetime": "20170413",
+      "summary": "编辑库位",
+      "type": "POST",
+      "params": {
+        "codeid": {
+          "default": "",
+          "required": true,
+          "description": "库位id"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "数量"
+        },
+        "code": {
+          "default": "",
+          "required": true,
+          "description": "库位"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/QuantityCodeDelete",
+      "updatetime": "20170413",
+      "summary": "编辑库位",
+      "type": "POST",
+      "params": {
+        "codeid": {
+          "default": "",
+          "required": true,
+          "description": "库位id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PlanSupplyList",
+      "updatetime": "20170413",
+      "summary": "补登记工单",
+      "type": "POST",
+      "params": {
+        "unitid": {
+          "default": "",
+          "required": true,
+          "description": "工单id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PartialFinishEdit",
+      "updatetime": "20170413",
+      "summary": "修改登记记录",
+      "type": "POST",
+      "params": {
+        "finishid": {
+          "default": "",
+          "required": true,
+          "description": "记录id"
+        },
+        "createtime": {
+          "default": "",
+          "required": true,
+          "description": "记录时间"
+        },
+        "quantity": {
+          "default": "",
+          "required": true,
+          "description": "记录数量"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/PartialFinishDelete",
+      "updatetime": "20170413",
+      "summary": "删除登记记录",
+      "type": "POST",
+      "params": {
+        "finishid": {
+          "default": "",
+          "required": true,
+          "description": "记录id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckEdit",
+      "updatetime": "20170413",
+      "summary": "修改质检记录",
+      "type": "POST",
+      "params": {
+        "checkid": {
+          "default": "",
+          "required": true,
+          "description": "质检id"
+        },
+        "result": {
+          "default": "",
+          "required": true,
+          "description": "结果0失败，1成功，2让步"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "checkmessageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckDelete",
+      "updatetime": "20170413",
+      "summary": "删除质检记录",
+      "type": "POST",
+      "params": {
+        "checkid": {
+          "default": "",
+          "required": true,
+          "description": "质检id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckChangeList",
+      "updatetime": "20170413",
+      "summary": "质检变更记录",
+      "type": "POST",
+      "params": {
+        "checkid": {
+          "default": "",
+          "required": true,
+          "description": "质检id"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/CheckSupply",
+      "updatetime": "20170413",
+      "summary": "补登质检记录",
+      "type": "POST",
+      "params": {
+        "planid": {
+          "default": "",
+          "required": true,
+          "description": "排班id"
+        },
+        "count": {
+          "default": "",
+          "required": true,
+          "description": "批次"
+        },
+        "checkunitid": {
+          "default": "",
+          "required": true,
+          "description": "质检单位id"
+        },
+        "result": {
+          "default": "",
+          "required": true,
+          "description": "结果0失败，1成功，2让步"
+        },
+        "memo": {
+          "default": "",
+          "required": true,
+          "description": "备注"
+        },
+        "files": {
+          "default": "",
+          "required": true,
+          "description": "附件"
+        },
+        "checkmessageids": {
+          "default": "",
+          "required": true,
+          "description": "原因ids"
+        },
+        "supplytime": {
+          "default": "",
+          "required": true,
+          "description": "补登时间"
+        },
+        "issupply": {
+          "default": "0",
+          "required": true,
+          "description": "是否补登"
+        }
+      },
+      "response": { }
+    },
+    {
+      "url": "UAPI/Produce/UnsetList",
+      "updatetime": "20170413",
+      "summary": "获取未设置的订单工单人员列表",
+      "type": "POST",
+      "params": {
+        "gettype": {
+          "default": "1",
+          "required": true,
+          "description": "1订单，2工单"
+        }
+      },
+      "response": { }
+    }
+  ]
+}
