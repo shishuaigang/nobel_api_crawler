@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-import json
 import csv
+import json
+import platform
 
 
 class gen_result:
@@ -30,7 +31,11 @@ class gen_result:
 
     # 生成temp.html
     def create_html(self, passrate, begintime, endtime, testNo):
-        f = open(self.path + r'\\temp.html', 'wb')
+        f = None
+        if platform.system() == 'Windows':
+            f = open(self.path + r'\\temp.html', 'wb')
+        elif platform.system() == 'Darwin':
+            f = open(self.path + r'/temp.html', 'wb')
         message = """
             <html>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,7 +56,11 @@ class gen_result:
              """
         f.write(message)
         f.close()
-        fx = open(self.path + r'\\temp.html', 'a')
+        fx = None
+        if platform.system() == 'Windows':
+            fx = open(self.path + r'\\temp.html', 'a')
+        elif platform.system() == 'Darwin':
+            fx = open(self.path + r'/temp.html', 'a')
         fx.write('')
         fx.write(
             '<table style="margin-left:12.5%;" width="75%" align="left-side" border="1" cellspacing="0" height="280">')
@@ -83,7 +92,11 @@ class gen_result:
         fx.write('<td align="center"  bgcolor="#D0D0D0">' + str(passrate[2]) + '</td>')
         fx.write('</tr>')
         fx.close()
-        f1 = open(self.path + r'\\temp.html', 'a')
+        f1 = None
+        if platform.system() == 'Windows':
+            f1 = open(self.path + r'\\temp.html', 'a')
+        elif platform.system() == 'Darwin':
+            f1 = open(self.path + r'/temp.html', 'a')
         f1.write('</table>')
         f1.write(
             '<h2 align="center" style="color:darkblue">Details</h2>')
@@ -188,18 +201,37 @@ class gen_result:
         f1.close()
 
     def create_csv(self):
-        with open(self.path + r'\\temp.csv', 'wb') as csvfile:
-            a = csv.writer(csvfile, dialect='excel')
-            a.writerow(
-                ['API_URL', 'API_ChineseName', 'Response_code', 'Response_time', 'Response_status', 'Error_Message'])
-            for i in range(self.api_len):
-                if self.res_code[i] == 200 and self.res_status[i] == 1:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]), 'N/A'])
-                elif self.res_code[i] == 200 and self.res_status[i] == 0:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]),
-                                str((json.loads(str(self.res[i].text)))['error']['message']).replace('\'', '#')])
-                else:
-                    a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
-                                str(self.res_time[i]), str(self.res_status[i]), 'Please check the testreport'])
+        if platform.system() == 'Windows':
+            with open(self.path + r'\\temp.csv', 'wb') as csvfile:
+                a = csv.writer(csvfile, dialect='excel')
+                a.writerow(
+                    ['API_URL', 'API_ChineseName', 'Response_code', 'Response_time', 'Response_status',
+                     'Error_Message'])
+                for i in range(self.api_len):
+                    if self.res_code[i] == 200 and self.res_status[i] == 1:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]), 'N/A'])
+                    elif self.res_code[i] == 200 and self.res_status[i] == 0:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]),
+                                    str((json.loads(str(self.res[i].text)))['error']['message']).replace('\'', '#')])
+                    else:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]), 'Please check the testreport'])
+        elif platform.system() == 'Darwin':
+            with open(self.path + r'/temp.csv', 'wb') as csvfile:
+                a = csv.writer(csvfile, dialect='excel')
+                a.writerow(
+                    ['API_URL', 'API_ChineseName', 'Response_code', 'Response_time', 'Response_status',
+                     'Error_Message'])
+                for i in range(self.api_len):
+                    if self.res_code[i] == 200 and self.res_status[i] == 1:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]), 'N/A'])
+                    elif self.res_code[i] == 200 and self.res_status[i] == 0:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]),
+                                    str((json.loads(str(self.res[i].text)))['error']['message']).replace('\'', '#')])
+                    else:
+                        a.writerow([str(self.url[i]), str(self.cn_name[i]).replace('\'', '#'), str(self.res_code[i]),
+                                    str(self.res_time[i]), str(self.res_status[i]), 'Please check the testreport'])
