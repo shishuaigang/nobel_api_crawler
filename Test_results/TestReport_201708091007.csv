@@ -1,0 +1,235 @@
+API_URL,API_ChineseName,Response_code,Response_time,Response_status,Error_Message
+UAPI/Unit/AddRemarks,工单增加备注,200,438.4,0,备注不能为空
+UAPI/Unit/Download,下载金属粉底,500,919.1,-1,Please check the testreport
+UAPI/Unit/QueryUnits,查询金属粉底,200,172.6,0,服务器错误
+UAPI/Produce/SplitPlan,拆分排班,200,255.4,0,服务器错误
+UAPI/Produce/GetNextFlow,查询工序可去工序,200,213.5,1,N/A
+UAPI/Produce/AddNextFlow,添加工序可去工序,200,873.8,1,N/A
+UAPI/Produce/DeleteNextFlow,删除工序可去工序,200,219.4,0,服务器错误
+UAPI/Unit/UnitCheckSetList,工单质检设置列表,200,692.4,1,N/A
+UAPI/Produce/AddQCRecord,新增质检结果登记,200,611.6,0,服务器错误
+UAPI/Produce/UpdateQCRecord,编辑质检结果登记,200,194.8,0,记录不存在
+UAPI/Produce/GetQCRecord,查询质检结果登记,200,132.9,0,记录不存在
+UAPI/Produce/SignIn,签到,200,295.2,0,服务器错误
+UAPI/Produce/ProductAdd,新增商品,500,88.9,-1,Please check the testreport
+UAPI/Produce/ProductGetList,获取商品,200,131.1,1,N/A
+UAPI/Produce/ProductPartialGetList,获取商品,200,91.1,1,N/A
+UAPI/Produce/PadUseCount,绑定的各个不同功能模块的数量,200,257.0,1,N/A
+UAPI/Produce/ProductDelete,删除商品,200,88.5,1,N/A
+UAPI/Produce/OrderAdd,新增订单,500,693.2,-1,Please check the testreport
+UAPI/Produce/OrderGetList,获取订单列表,200,156.8,1,N/A
+UAPI/Produce/OrderReview,获取追溯,200,331.2,1,N/A
+UAPI/Produce/OrderSet,订单状态设置,200,33.6,0,无效的status
+UAPI/Produce/OrderInit,订单状态设置,200,282.4,1,N/A
+UAPI/Produce/OrderManualSure,手动拆分订单为工单,200,989.9,1,N/A
+UAPI/Produce/OrderSure,订单自动生成工单,200,154.7,1,N/A
+UAPI/Produce/FlowAdd,新增工序,500,486.2,-1,Please check the testreport
+UAPI/Produce/FlowToMessageAdd,新增工序对应原因关系,200,111.0,1,N/A
+UAPI/Produce/FlowToMessageDel,删除工序对应原因关系,200,64.7,1,N/A
+UAPI/Produce/FlowToMessageGetList,读取工序对应原因关系,200,65.9,1,N/A
+UAPI/Produce/FlowToMessageSort,工序对应原因关系排序,200,62.4,1,N/A
+UAPI/Produce/FlowGetList,获取工序列表,200,86.9,1,N/A
+UAPI/Produce/FlowDelete,删除工序,200,69.2,1,N/A
+UAPI/Produce/ButtonAdd,新增系统按钮,500,111.2,-1,Please check the testreport
+UAPI/Produce/ButtonGetList,获取按钮列表,200,105.5,1,N/A
+UAPI/Produce/ButtonDelete,删除按钮,200,84.6,1,N/A
+UAPI/Produce/PlanButtonAdd,新增排班按钮配置,500,54.1,-1,Please check the testreport
+UAPI/Produce/PlanButtonGetList,获取按钮列表,200,72.4,1,N/A
+UAPI/Produce/PlanButtonDelete,删除排班按钮,200,53.2,1,N/A
+UAPI/Produce/DeviceAdd,新增设备,200,73.0,1,N/A
+UAPI/Produce/DeviceSort,生产设备排序,200,63.5,1,N/A
+UAPI/Produce/DeviceSet,设置设备状态,200,152.8,1,N/A
+UAPI/Produce/DeviceBind,设置绑定,200,48.9,1,N/A
+UAPI/Produce/DeviceShowBind,工序一览绑定,200,49.1,1,N/A
+UAPI/Produce/BindCheck,检测当前pad是否绑定,200,48.4,1,N/A
+UAPI/Produce/DeviceGetList,获取设备列表,200,106.4,1,N/A
+UAPI/Produce/PadDeviceGetList,获取当前pad绑定的设备列表,200,68.4,1,N/A
+UAPI/Produce/BindDeviceGetList,获取所有设备列表,200,58.8,1,N/A
+UAPI/Produce/UnitGetList,获取工单列表,200,76.9,1,N/A
+UAPI/Produce/UnitAutoPlan,工单自动排班,200,392.0,1,N/A
+UAPI/Produce/UnitSet,工单设置,200,77.7,1,N/A
+UAPI/Produce/UnitMunualPlan,工单手动排班,200,65.2,1,N/A
+UAPI/Produce/UnitMunualPlanNew,工单手动排班,500,45.7,-1,Please check the testreport
+UAPI/Produce/PlanSet,设置排班状态,200,66.8,1,N/A
+UAPI/Produce/PlanGetList,获取排班列表,200,307.6,1,N/A
+UAPI/Produce/PlanCommonGetList,获取排班列表,200,78.2,1,N/A
+UAPI/Produce/PlanViewGetList,排班一览,200,111.0,1,N/A
+UAPI/Produce/PlanOperateGetList,获取当前pad操作台排班列表-横,200,131.9,1,N/A
+UAPI/Produce/PlanApeakGetList,获取当前pad操作台排班列表-竖,200,151.4,1,N/A
+UAPI/Produce/PlanJumpGetList,获取用户手动插队的排班列表,200,162.5,1,N/A
+UAPI/Produce/PlanShowGetList,获取工序一览列表,200,157.1,1,N/A
+UAPI/Produce/CheckUnitAdd,新增质检单位,200,82.3,1,N/A
+UAPI/Produce/CheckUnitGetList,获取质检单位,200,47.2,1,N/A
+UAPI/Produce/CheckUnitDelete,删除质检单位,200,104.4,1,N/A
+UAPI/Produce/CheckMessageAdd,新增质检没通过原因,200,84.4,1,N/A
+UAPI/Produce/CheckMessageGetList,获取质检没通过原因列表,200,44.9,1,N/A
+UAPI/Produce/CheckMessageDelete,删除质检没通过原因,500,108.4,-1,Please check the testreport
+UAPI/Produce/OrderMessageAdd,新增订单（工单）终止原因,200,74.0,1,N/A
+UAPI/Produce/OrderMessageGetList,获取订单（工单）终止原因列表,200,77.6,1,N/A
+UAPI/Produce/OrderMessageDelete,删除订单（工单）终止原因,200,47.6,1,N/A
+UAPI/Produce/LineAdd,新增流水线,200,54.2,1,N/A
+UAPI/Produce/LineGetList,获取流水线,200,64.0,1,N/A
+UAPI/Produce/LineDelete,删除流水线,200,48.0,1,N/A
+UAPI/Produce/LineFlowAdd,新增流水线工序配置,500,58.9,-1,Please check the testreport
+UAPI/Produce/LineFlowGetList,获取流水线工序配置列表,200,68.7,1,N/A
+UAPI/Produce/LineFlowDelete,删除流水线工序配置,200,79.5,1,N/A
+UAPI/Produce/ProductLineAdd,新增产品流水线配置,500,58.6,-1,Please check the testreport
+UAPI/Produce/ProductLineGetList,获取产品流水线配置列表,200,54.3,1,N/A
+UAPI/Produce/ProductLineDelete,删除产品流水线配置,200,46.8,1,N/A
+UAPI/Produce/ProductFlowAdd,新增产品可选工序配置,200,58.8,0,请选择正确的设备
+UAPI/Produce/ProductFlowGetList,获取产品可选工序配置列表,200,62.2,1,N/A
+UAPI/Produce/ProductFlowDelete,删除产品可选工序配置,200,52.8,0,请选择正确的设备
+UAPI/Produce/ItemAdd,新增订单工单状态选项,200,64.2,1,N/A
+UAPI/Produce/ItemGetList,获取订单工单状态选项,200,72.0,1,N/A
+UAPI/Produce/ItemDelete,删除订单工单状态选项,200,102.7,1,N/A
+UAPI/Produce/GroupAdd,新增班组,200,56.0,1,N/A
+UAPI/Produce/GroupGetList,获取班组列表,200,103.6,1,N/A
+UAPI/Produce/GroupDelete,删除班组,200,56.8,1,N/A
+UAPI/Produce/CheckAdd,新增质检送样,200,266.0,0,planid不能空
+UAPI/Produce/CheckGetList,获取质检送样列表,200,258.8,1,N/A
+UAPI/Produce/CheckSet,质检送样设置,200,161.5,1,N/A
+UAPI/Produce/RepositoryAdd,新增仓库,200,32.2,1,N/A
+UAPI/Produce/RepositoryGetList,获取仓库列表,200,31.7,1,N/A
+UAPI/Produce/RepositoryDelete,删除仓库,200,34.2,1,N/A
+UAPI/Produce/RepositoryIn,订单产品入库,200,69.4,1,N/A
+UAPI/Produce/Transfer,订单产品运输,200,59.6,1,N/A
+UAPI/Produce/PadAdd,新增平板,200,102.6,1,N/A
+UAPI/Produce/PadGetList,获取平板列表,200,102.5,1,N/A
+UAPI/Produce/PadDelete,删除平板,200,54.6,1,N/A
+UAPI/Produce/CheckPropertyAdd,新增质检属性,200,63.7,1,N/A
+UAPI/Produce/CheckPropertyGetList,获取质检属性列表,200,45.9,1,N/A
+UAPI/Produce/CheckPropertyDelete,删除质检属性,200,83.8,1,N/A
+UAPI/Produce/CheckBoxAdd,新增质检盒子,200,55.5,1,N/A
+UAPI/Produce/CheckBoxGetList,获取质检盒子列表,200,92.2,1,N/A
+UAPI/Produce/CheckBoxShow,质检一览,200,135.3,1,N/A
+UAPI/Produce/CheckBoxDelete,删除质检盒子,200,62.5,1,N/A
+UAPI/Produce/CheckBoxSort,质检盒子排序,200,52.0,1,N/A
+UAPI/Produce/CheckBoxShowBind,质检盒子一览绑定排序,200,91.6,1,N/A
+UAPI/Produce/CheckBoxBind,质检盒子绑定,200,48.6,1,N/A
+UAPI/Produce/DevicePowerAdd,新增设备生产能力,500,55.3,-1,Please check the testreport
+UAPI/Produce/DevicePowerGetList,获取设备生产能力列表,200,63.0,1,N/A
+UAPI/Produce/DevicePowerDelete,删除设备生产能力,200,60.4,1,N/A
+UAPI/Produce/PrepareTypeAdd,新增准备类型,200,68.2,1,N/A
+UAPI/Produce/PrepareTypeGetList,获取准备类型列表,200,40.5,1,N/A
+UAPI/Produce/PrepareTypeDelete,删除准备类型,200,53.2,1,N/A
+UAPI/Produce/DevicePrepareAdd,新增设备准备时间,200,189.4,1,N/A
+UAPI/Produce/DevicePrepareGetList,获取设备准备时间列表,200,120.0,1,N/A
+UAPI/Produce/DevicePrepareDel,获取设备准备时间列表,200,63.5,0,请选择正确的设备
+UAPI/Produce/DevicePrepareDelete,删除准备类型,200,51.6,1,N/A
+UAPI/Produce/RefreshSpanGetList,获取刷新时间间隔,200,40.9,1,N/A
+UAPI/Produce/ScreenAdd,新增截屏,200,68.5,1,N/A
+UAPI/Produce/ObjectBind,设备对象和pad绑定,200,66.5,1,N/A
+UAPI/Produce/DeviceBindView,设备对象和pad绑定列表,200,92.2,1,N/A
+UAPI/Produce/ProductSetPartial,设置产品配比,200,289.8,1,N/A
+UAPI/Produce/MessageAdd,添加原因,200,100.3,1,N/A
+UAPI/Produce/MessageGetList,获取原因列表,200,122.8,1,N/A
+UAPI/Produce/MessageDelete,删除原因,200,43.8,1,N/A
+UAPI/Produce/MessageTypeGetList,获取原因类别,200,64.0,1,N/A
+UAPI/Produce/PlanNextFlows,后续工序,200,427.2,1,N/A
+UAPI/Produce/ExtraPlan,额外工序,200,347.3,1,N/A
+UAPI/Produce/ExtraPlanPreview,额外工序,200,177.8,1,N/A
+UAPI/Produce/ExtraPlanPreview,额外工序,200,159.8,1,N/A
+UAPI/Produce/MessageRecordGetList,获取记录列表,200,658.5,1,N/A
+UAPI/Produce/PartialFinishGetList,获取部分完成记录列表,200,291.5,1,N/A
+UAPI/Produce/ApplyButtons,获取操作按钮,200,168.6,1,N/A
+UAPI/Produce/FinishRecordAdd,完成入库,200,183.9,1,N/A
+UAPI/Produce/FinishRecordGetList,获取完成入库记录,200,779.8,1,N/A
+UAPI/Produce/FinishRecordEdit,入库记录修改,200,420.9,1,N/A
+UAPI/Produce/EntityPropertyTypeGetList,获取属性类别,200,115.8,1,N/A
+UAPI/Produce/EntityPropertyTypeAdd,获取属性类别,200,60.8,1,N/A
+UAPI/Produce/EntityPropertyAdd,新增属性,200,58.7,1,N/A
+UAPI/Produce/EntityPropertyDelete,删除属性,200,65.0,1,N/A
+UAPI/Produce/EntityPropertyGetList,获取属性类别,200,38.0,1,N/A
+UAPI/Produce/InstancePropertyEdit,设置对象属性,200,101.2,1,N/A
+UAPI/Produce/SuspendMessageGetList,挂起恢复原因选择建议列表,200,59.7,1,N/A
+UAPI/Produce/SuspendMessageAdd,设置挂起恢复原因选择建议列表,200,69.0,1,N/A
+UAPI/Produce/ImportProduct,导入产品,500,50.3,-1,Please check the testreport
+UAPI/Produce/UnitPlanPreview,工单排班预览,500,216.6,-1,Please check the testreport
+UAPI/Produce/PlanPreviewGetList,排班预览列表获取,200,168.5,1,N/A
+UAPI/Produce/PlanPreviewGetListNone,排班预览列表获取,200,345.5,1,N/A
+UAPI/Produce/PlanPreview,排班预览调整,500,213.8,-1,Please check the testreport
+UAPI/Produce/MakeSurePreview,保存排班预览调整,200,355.2,1,N/A
+UAPI/Produce/WaitTransferShow,获取待运输成品,200,180.3,1,N/A
+UAPI/Produce/MakeSureTransfer,确认待运输成品,200,80.0,1,N/A
+UAPI/Produce/TransferingShow,获取待运输成品,200,118.6,1,N/A
+UAPI/Produce/MakeSureUnitSaved,确认成品入库,200,59.6,1,N/A
+UAPI/Produce/ProductDeviceAdd,产品和设备推荐关系配置,200,42.6,1,N/A
+UAPI/Produce/ProductDeviceDelete,删除产品和设备推荐关系配置,200,74.8,1,N/A
+UAPI/Produce/TransferCount,运输统计,200,75.6,0,无效的counttype
+UAPI/Produce/SetWaitTransfer,设置待运输数量,500,105.8,-1,Please check the testreport
+UAPI/Produce/UnitPlan,工单排班,200,140.1,1,N/A
+UAPI/Produce/SkuPropertyAdd,新增sku属性列表,200,85.7,1,N/A
+UAPI/Produce/SkuPropertyGetList,获取sku属性列表,200,49.3,1,N/A
+UAPI/Produce/SkuPropertyDelete,删除sku属性,200,49.0,1,N/A
+UAPI/Produce/SkuPropertyCodeAdd,新增sku属性编码,500,67.4,-1,Please check the testreport
+UAPI/Produce/SkuPropertyCodeGetList,获取sku属性列表,200,32.5,1,N/A
+UAPI/Produce/SkuPropertyCodeDelete,删除sku属性,200,252.4,1,N/A
+UAPI/Produce/SkuPropertyCodeProductAdd,新增sku属性编码和产品关系配置,200,85.3,1,N/A
+UAPI/Produce/SkuPropertyCodeProductGetList,获取sku属性和商品对应关系列表,200,54.7,1,N/A
+UAPI/Produce/SkuPropertyCodeDeviceAdd,新增sku属性编码和设备关系配置,200,143.4,1,N/A
+UAPI/Produce/DeviceToCheckBoxAdd,增加device和checkbox对应关系,200,98.3,0,请选择正确的质检盒子
+UAPI/Produce/DeviceToCheckBoxDelete,删除device和checkbox对应关系,200,50.1,0,请选择正确的质检盒子
+UAPI/Produce/DeviceToCheckBoxGetList,读取device和checkbox对应关系,200,79.0,1,N/A
+UAPI/Produce/SkuPropertyCodeDeviceGetList,获取sku属性和谁被对应关系列表,200,344.3,1,N/A
+UAPI/Produce/MessageRecordAdd,添加原因,200,47.4,1,N/A
+UAPI/Produce/SetWaitTransferRecordGetList,获取修改待运输记录,200,207.7,1,N/A
+UAPI/Produce/SetPlanCheck,设置需要质检的工单,200,67.4,1,N/A
+UAPI/Produce/RemovePlanPreview,移除预排班,200,75.7,1,N/A
+UAPI/Produce/CanclePreview,重置所有预排班,200,65.1,1,N/A
+UAPI/Produce/UnitConfuteGetList,获取拒收的工单,200,148.9,1,N/A
+UAPI/Produce/UnitViewList,交期一览,200,141.5,1,N/A
+UAPI/Produce/FinishRecordConfute,拒收入库,500,63.9,-1,Please check the testreport
+UAPI/Produce/PadUseGetlist,pad绑定设备等一览,200,149.9,1,N/A
+UAPI/Produce/PlanShowBind,planshow绑定解绑pad,200,50.1,1,N/A
+UAPI/Produce/SkuPropertyCodeRelationAdd,新增冲突关系,200,74.3,1,N/A
+UAPI/Produce/SkuPropertyCodeRelationGetlist,读取冲突关系,200,85.2,1,N/A
+UAPI/Produce/SkuPropertyCodeRelationDel,删除冲突关系,200,44.2,1,N/A
+UAPI/Produce/SkuPropertyCodeGetListAll,读取所有商品特性的属性,200,67.7,1,N/A
+UAPI/Produce/ConfuteRecordSet,重新入库入库,500,89.5,-1,Please check the testreport
+UAPI/Produce/MessageTypeAdd,获取入库记录列表,200,53.5,1,N/A
+UAPI/Produce/TransferSaveRecordGetList,获取入库记录列表,200,150.8,1,N/A
+UAPI/Produce/SetTransferSaveCode,设置入库库位,200,160.6,1,N/A
+UAPI/Produce/SetQuantityCode,设置入库库位,200,72.8,1,N/A
+UAPI/Produce/EditTransferSaveCode,编辑入库库位,200,147.3,1,N/A
+UAPI/Produce/MakeSureTransferSaveCode,确认库位信息,200,46.0,1,N/A
+UAPI/Produce/PartialRecordGetList,获取登记记录,200,61.3,1,N/A
+UAPI/Produce/PartialRecordSet,修改登记数量,200,101.3,1,N/A
+UAPI/Produce/AccountToCheckBoxAdd,人员与质检盒子绑定,200,142.2,1,N/A
+UAPI/Produce/AccountTodeviceAdd,人员与质检盒子绑定,200,162.2,1,N/A
+UAPI/Produce/AccountToDeviceGetlist,人员与设备绑定,200,126.0,1,N/A
+UAPI/Produce/AccountToCheckBoxGetlist,人员与质检盒子绑定,200,114.9,1,N/A
+UAPI/Produce/ProductTypedel,删除产品类型 成品半成品不合格品等,200,53.0,1,N/A
+UAPI/Produce/ProductTypeAdd,新增产品类型 成品半成品不合格品等,500,82.0,-1,Please check the testreport
+UAPI/Produce/UnitCurrentView,实况一览，status-1未生产，2生产中，3待运输，4运输中，5已入库,200,344.3,1,N/A
+UAPI/Produce/CheckPlanList,我负责质检送样的排班,200,392.5,1,N/A
+UAPI/Produce/UserCheckList,我负责的质检,200,160.5,1,N/A
+UAPI/Produce/ProductTypeGetList,工单完成品类型,200,69.7,1,N/A
+UAPI/Produce/ProductHandleList,成品处理配置,200,45.1,1,N/A
+UAPI/Produce/UnitEdit,修改工单号和数量,200,73.4,1,N/A
+UAPI/Produce/SkuPropertyCodeDeviceInit,初始化设备和商品属性对应关系,200,45.9,1,N/A
+UAPI/Produce/TransferUnitList,成品处理配置,200,166.6,1,N/A
+UAPI/Produce/TransferUnitQuantityList,成品处理配置,200,320.0,1,N/A
+UAPI/Produce/TransferQuantityList,工单产品列表,200,179.7,1,N/A
+UAPI/Produce/PlanQuantityHistory,登记完成历史记录,200,292.0,1,N/A
+UAPI/Produce/ConfuteQuantityList,拒收记录,200,343.6,1,N/A
+UAPI/Produce/ConfuteQuantity,拒收入库,500,170.5,-1,Please check the testreport
+UAPI/Produce/ConfuteQuantitySet,重新入库,500,166.6,-1,Please check the testreport
+UAPI/Produce/PlanStateViewList,排班视图,200,344.8,1,N/A
+UAPI/Produce/UnitMergeList,工单合并视图,200,153.6,1,N/A
+UAPI/Produce/PlanCheckList,排班质检状态,200,176.5,1,N/A
+UAPI/Produce/UnitJumpPreview,预排班插队,200,492.8,1,N/A
+UAPI/Produce/PlanEdit,编辑排班,200,151.6,1,N/A
+UAPI/Produce/AccountDeviceOperateAdd,新增设备操作人,200,167.8,1,N/A
+UAPI/Produce/AccountDeviceOperateList,获取设备操作人列表,200,254.2,1,N/A
+UAPI/Produce/AccountDeviceOperateDelete,删除设备操作人,200,60.7,1,N/A
+UAPI/Produce/QuantityCodeList,库位列表,200,51.9,1,N/A
+UAPI/Produce/QuantityCodeEdit,编辑库位,200,46.0,1,N/A
+UAPI/Produce/QuantityCodeDelete,编辑库位,200,41.9,1,N/A
+UAPI/Produce/PlanSupplyList,补登记工单,200,180.3,1,N/A
+UAPI/Produce/PartialFinishEdit,修改登记记录,200,56.6,1,N/A
+UAPI/Produce/PartialFinishDelete,删除登记记录,200,34.5,1,N/A
+UAPI/Produce/CheckEdit,修改质检记录,200,50.6,1,N/A
+UAPI/Produce/CheckDelete,删除质检记录,200,108.9,1,N/A
+UAPI/Produce/CheckChangeList,质检变更记录,200,310.7,1,N/A
+UAPI/Produce/CheckSupply,补登质检记录,500,52.9,-1,Please check the testreport
+UAPI/Produce/UnsetList,获取未设置的订单工单人员列表,200,80.8,1,N/A
