@@ -2,7 +2,8 @@
     "sender_mail": "sgshi@in-road.com",
     "password": "Shishuaigang123!",
     "receiver_list": [
-        "sgshi@in-road.com"
+        "sgshi@in-road.com",
+        "jjxia@in-road.com"
     ],
     "mail_subject": "Nobel api 扫描",
     "api_version": "999999999",

@@ -56,7 +56,10 @@ if __name__ == "__main__":
     if write_database.write_db(conf['db_name'], conf['db_host'], conf['db_username'], conf['db_userpasswd'],
                                testNo).write_db(api_len) == 1:
         print u'尝试发送测试报告...'
-        sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
-        print u'测试报告发送成功,API遍历测试完成'
+        try:
+            sendmail.send_mail(conf['receiver_list'], conf['mail_subject'], testNo).send_mail()
+            print u'测试报告发送成功,API遍历测试完成'
+        except Exception:
+            print u'发送邮件失败'
     else:
         print u'写入数据库或者测试报告发送失败,请检查脚本和错误信息'
