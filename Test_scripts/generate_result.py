@@ -136,7 +136,7 @@ class gen_result:
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
                         (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                     # response code为500，颜色为紫色，填入Response code : 500, Sever Error
                 elif self.res_code[i] == 500:
                     f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
@@ -144,7 +144,7 @@ class gen_result:
                     f1.write(
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">Response code : 500, Sever Error</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                 else:
                     f1.write('<td align="center" bgcolor="red">' + str(self.res_code[i]) + '</td>')
                     f1.write('<td align="center" bgcolor="red">''</td>')
@@ -152,7 +152,7 @@ class gen_result:
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
                         self.res[i].text + '</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                 f1.write('</tr>')
             else:
                 f1.write('<tr bgcolor="#D0D0D0">')
@@ -168,7 +168,7 @@ class gen_result:
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(1) + '</td>')
                     f1.write('<td></td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                     # response code为200且status为0，code颜色为绿色，status为红色，填入error message
                 elif self.res_code[i] == 200 and self.res_status[i] == 0:
                     f1.write('<td align="center" bgcolor="#C1FFC1">' + str(200) + '</td>')
@@ -177,7 +177,7 @@ class gen_result:
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
                         (json.loads(str(self.res[i].text)))['error']['message'] + '</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                     # response code为500，颜色为红色，填入Response code : 500, Sever Error
                 elif self.res_code[i] == 500:
                     f1.write('<td align="center" bgcolor="purple">' + str(500) + '</td>')
@@ -185,7 +185,7 @@ class gen_result:
                     f1.write(
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">Response code : 500, Sever Error</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                 else:
                     f1.write('<td align="center" bgcolor="red">' + str(self.res_code[i]) + '</td>')
                     f1.write('<td align="center" bgcolor="red">''</td>')
@@ -193,7 +193,7 @@ class gen_result:
                         '<td style="word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" align="center">' +
                         self.res[i].text + '</td>')
                     f1.write('<td align="left"><div style="width:' + str(
-                        float(self.res_time[i]) / 2) + 'px;height:15px;background:darkblue;"></div></td>')
+                        float(self.res_time[i]) / 5) + 'px;height:15px;background:darkblue;"></div></td>')
                 f1.write('</tr>')
         f1.write('</table>')
         f1.write('</body>')
